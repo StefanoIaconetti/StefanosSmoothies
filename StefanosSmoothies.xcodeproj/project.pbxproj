@@ -14,6 +14,7 @@
 		9C014A9F21910A1900E560CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C014A9D21910A1900E560CF /* LaunchScreen.storyboard */; };
 		9C014AAA21910A1900E560CF /* StefanosSmoothiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014AA921910A1900E560CF /* StefanosSmoothiesTests.swift */; };
 		9C014AB521910A1900E560CF /* StefanosSmoothiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014AB421910A1900E560CF /* StefanosSmoothiesUITests.swift */; };
+		9C014AC3219140F400E560CF /* ShowSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014AC2219140F400E560CF /* ShowSplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9C014AB021910A1900E560CF /* StefanosSmoothiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StefanosSmoothiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C014AB421910A1900E560CF /* StefanosSmoothiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanosSmoothiesUITests.swift; sourceTree = "<group>"; };
 		9C014AB621910A1900E560CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C014AC2219140F400E560CF /* ShowSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				9C014A9B21910A1900E560CF /* Assets.xcassets */,
 				9C014A9D21910A1900E560CF /* LaunchScreen.storyboard */,
 				9C014AA021910A1900E560CF /* Info.plist */,
+				9C014AC2219140F400E560CF /* ShowSplashScreen.swift */,
 			);
 			path = StefanosSmoothies;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				9C014A9721910A1800E560CF /* ViewController.swift in Sources */,
 				9C014A9521910A1800E560CF /* AppDelegate.swift in Sources */,
+				9C014AC3219140F400E560CF /* ShowSplashScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

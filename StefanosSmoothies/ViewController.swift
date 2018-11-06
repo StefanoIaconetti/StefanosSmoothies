@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var indicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.indicator.isHidden = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
