@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var contButton: UIButton!
     @IBOutlet var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        contButton.isHidden = true;
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.indicator.isHidden = true
+            self.contButton.isHidden = false
         }
     }
 

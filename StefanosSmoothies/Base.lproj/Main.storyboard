@@ -27,18 +27,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH2-jf-7dp" userLabel="contButton">
+                                <rect key="frame" x="156" y="355" width="62" height="30"/>
+                                <state key="normal" title="Continue"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tzy-0f-CEd" firstAttribute="top" secondItem="Tdo-b7-bDY" secondAttribute="bottom" constant="8" id="GaK-mc-1aM"/>
                             <constraint firstItem="Tdo-b7-bDY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Nsc-ZW-2b4"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="top" secondItem="Tdo-b7-bDY" secondAttribute="bottom" constant="1" id="S40-RA-aTW"/>
                             <constraint firstItem="tzy-0f-CEd" firstAttribute="centerX" secondItem="Tdo-b7-bDY" secondAttribute="centerX" id="XrS-gi-7PC"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="centerX" secondItem="Tdo-b7-bDY" secondAttribute="centerX" id="Z4t-A1-ZEL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tzy-0f-CEd" secondAttribute="bottom" constant="288" id="ZUm-uU-CCL"/>
                             <constraint firstItem="Tdo-b7-bDY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iUm-mp-OLi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="contButton" destination="UH2-jf-7dp" id="76p-65-Ltq"/>
                         <outlet property="indicator" destination="tzy-0f-CEd" id="yNK-zj-GCr"/>
                     </connections>
                 </viewController>
