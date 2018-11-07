@@ -22,34 +22,39 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tzy-0f-CEd">
                                 <rect key="frame" x="177.5" y="333.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vAY-C1-mv5">
+                                <rect key="frame" x="100" y="137" width="177" height="164"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH2-jf-7dp" userLabel="contButton">
-                                <rect key="frame" x="156.5" y="333.5" width="62" height="20"/>
-                                <state key="normal" title="Continue"/>
+                                <rect key="frame" x="155" y="333" width="64" height="20"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.38431372549019605" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="HBg-rs-Ywy" kind="presentation" id="hdD-Qo-Fg6"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vAY-C1-mv5">
-                                <rect key="frame" x="100" y="137" width="177" height="164"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.69803921568627447" green="1" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UH2-jf-7dp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1NI-O8-afa"/>
                             <constraint firstItem="vAY-C1-mv5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="30L-Ft-xt4"/>
                             <constraint firstItem="vAY-C1-mv5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="3WD-Et-zfm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vAY-C1-mv5" secondAttribute="trailing" constant="247" id="Aif-T1-PdP"/>
                             <constraint firstItem="tzy-0f-CEd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CSC-a5-Krz"/>
                             <constraint firstItem="tzy-0f-CEd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GRb-a2-pLO"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="O9M-2A-wT1"/>
                             <constraint firstItem="UH2-jf-7dp" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="7.5" id="Qmi-ms-odr"/>
-                            <constraint firstItem="UH2-jf-7dp" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="33" id="TUA-G3-HCG"/>
                             <constraint firstItem="vAY-C1-mv5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="117" id="Tax-dH-pr8"/>
                             <constraint firstItem="vAY-C1-mv5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="TnI-OQ-Mpx"/>
                             <constraint firstItem="tzy-0f-CEd" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="12.5" id="X6l-i6-CBN"/>
                             <constraint firstItem="tzy-0f-CEd" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="33" id="Yjv-FN-NyN"/>
                             <constraint firstItem="vAY-C1-mv5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="236" id="a2B-s5-Apo"/>
                             <constraint firstItem="vAY-C1-mv5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="246" id="dlT-DA-V65"/>
-                            <constraint firstItem="UH2-jf-7dp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ha1-Ke-mHQ"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fXq-0d-hOG"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="32" id="hr3-Fh-RLs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vAY-C1-mv5" secondAttribute="trailing" constant="98" id="n1l-yC-qni"/>
                             <constraint firstItem="vAY-C1-mv5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s8x-PG-jh8"/>
                             <constraint firstItem="vAY-C1-mv5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tPy-oM-fch"/>
@@ -81,14 +86,13 @@
                                 <exclude reference="s8x-PG-jh8"/>
                                 <include reference="tPy-oM-fch"/>
                                 <include reference="Qmi-ms-odr"/>
-                                <exclude reference="TUA-G3-HCG"/>
                                 <include reference="X6l-i6-CBN"/>
                                 <exclude reference="Yjv-FN-NyN"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="contButton" destination="UH2-jf-7dp" id="76p-65-Ltq"/>
+                        <outlet property="contButton" destination="UH2-jf-7dp" id="l0Y-zG-bNM"/>
                         <outlet property="indicator" destination="tzy-0f-CEd" id="yNK-zj-GCr"/>
                     </connections>
                 </viewController>
@@ -157,7 +161,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FDS-Pb-X6J"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Family members" id="WAc-VQ-tvS">
+                    <navigationItem key="navigationItem" title="Stefanos Smoothies" id="WAc-VQ-tvS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uM4-ou-ClJ"/>
                     </navigationItem>
                 </viewController>

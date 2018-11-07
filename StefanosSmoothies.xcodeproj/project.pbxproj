@@ -34,6 +34,7 @@
 		9C014B10219291A500E560CF /* icon_20pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C014AFE219291A500E560CF /* icon_20pt.png */; };
 		9C014B11219291A500E560CF /* Slice 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C014AFF219291A500E560CF /* Slice 1.png */; };
 		9C014B13219292A100E560CF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014B12219292A100E560CF /* SplashScreen.swift */; };
+		9C014B1621929FE600E560CF /* SmoothieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C014B1421929FE600E560CF /* SmoothieModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		9C014AFE219291A500E560CF /* icon_20pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_20pt.png; path = ../../../../../Volumes/SCHOOLUSB/Semester5/IOS/Project/icon_20pt.png; sourceTree = "<group>"; };
 		9C014AFF219291A500E560CF /* Slice 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slice 1.png"; path = "../../../../../Volumes/SCHOOLUSB/Semester5/IOS/Project/Slice 1.png"; sourceTree = "<group>"; };
 		9C014B12219292A100E560CF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		9C014B1521929FE600E560CF /* SmoothieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmoothieModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		9C014A9321910A1800E560CF /* StefanosSmoothies */ = {
 			isa = PBXGroup;
 			children = (
+				9C014B1421929FE600E560CF /* SmoothieModel.xcdatamodeld */,
 				9C014A9421910A1800E560CF /* AppDelegate.swift */,
 				9C014A9621910A1800E560CF /* ViewController.swift */,
 				9C014A9821910A1800E560CF /* Main.storyboard */,
@@ -346,6 +349,7 @@
 				9C014A9721910A1800E560CF /* ViewController.swift in Sources */,
 				9C014A9521910A1800E560CF /* AppDelegate.swift in Sources */,
 				9C014AC3219140F400E560CF /* ShowSplashScreen.swift in Sources */,
+				9C014B1621929FE600E560CF /* SmoothieModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +670,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C014B1421929FE600E560CF /* SmoothieModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C014B1521929FE600E560CF /* SmoothieModel.xcdatamodel */,
+			);
+			currentVersion = 9C014B1521929FE600E560CF /* SmoothieModel.xcdatamodel */;
+			path = SmoothieModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9C014A8921910A1800E560CF /* Project object */;
 }

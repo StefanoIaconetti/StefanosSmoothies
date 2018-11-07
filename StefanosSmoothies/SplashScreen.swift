@@ -10,12 +10,14 @@ import UIKit
 
 class SplashScreen: UIViewController {
     
-    @IBOutlet weak var contButton: UIButton!
+    @IBOutlet var contButton: UIButton!
     @IBOutlet var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contButton.isHidden = true;
+        contButton.isHidden = true
+        contButton.layer.cornerRadius = 4
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.indicator.isHidden = true
             self.contButton.isHidden = false
