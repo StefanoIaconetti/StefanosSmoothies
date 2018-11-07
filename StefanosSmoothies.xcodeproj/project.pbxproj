@@ -119,7 +119,6 @@
 		9C014A8821910A1800E560CF = {
 			isa = PBXGroup;
 			children = (
-				9C014B1A2192A40000E560CF /* SmoothieModel.xcdatamodeld */,
 				9C014AED2192917800E560CF /* Images */,
 				9C014A9321910A1800E560CF /* StefanosSmoothies */,
 				9C014AA821910A1900E560CF /* StefanosSmoothiesTests */,
@@ -141,6 +140,7 @@
 		9C014A9321910A1800E560CF /* StefanosSmoothies */ = {
 			isa = PBXGroup;
 			children = (
+				9C014B1A2192A40000E560CF /* SmoothieModel.xcdatamodeld */,
 				9C014A9421910A1800E560CF /* AppDelegate.swift */,
 				9C014A9621910A1800E560CF /* SmoothieViewController.swift */,
 				9C014A9821910A1800E560CF /* Main.storyboard */,
@@ -680,7 +680,8 @@
 				9C014B1B2192A40000E560CF /* SmoothieModel.xcdatamodel */,
 			);
 			currentVersion = 9C014B1B2192A40000E560CF /* SmoothieModel.xcdatamodel */;
-			path = SmoothieModel.xcdatamodeld;
+			name = SmoothieModel.xcdatamodeld;
+			path = ../SmoothieModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
