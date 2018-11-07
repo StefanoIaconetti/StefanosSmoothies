@@ -34,6 +34,7 @@
 		9C014B11219291A500E560CF /* Slice 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C014AFF219291A500E560CF /* Slice 1.png */; };
 		9C014B13219292A100E560CF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014B12219292A100E560CF /* SplashScreen.swift */; };
 		9C014B1621929FE600E560CF /* SmoothieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C014B1421929FE600E560CF /* SmoothieModel.xcdatamodeld */; };
+		9C014B192192A2FF00E560CF /* Slice 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C014B182192A2FF00E560CF /* Slice 1@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		9C014AFF219291A500E560CF /* Slice 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slice 1.png"; path = "../../../../../Volumes/SCHOOLUSB/Semester5/IOS/Project/Slice 1.png"; sourceTree = "<group>"; };
 		9C014B12219292A100E560CF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		9C014B1521929FE600E560CF /* SmoothieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmoothieModel.xcdatamodel; sourceTree = "<group>"; };
+		9C014B182192A2FF00E560CF /* Slice 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slice 1@2x.png"; path = "../../../../../Volumes/SCHOOLUSB/Semester5/IOS/Project/Slice 1@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				9C014AF8219291A400E560CF /* icon_83.5@2x.png */,
 				9C014AFB219291A400E560CF /* Icon.png */,
 				9C014AFF219291A500E560CF /* Slice 1.png */,
+				9C014B182192A2FF00E560CF /* Slice 1@2x.png */,
 				9C014AEE219291A300E560CF /* Slice 1@3x.png */,
 			);
 			path = Images;
@@ -307,6 +310,7 @@
 				9C014B02219291A500E560CF /* icon_40pt.png in Resources */,
 				9C014B05219291A500E560CF /* icon_20pt@3x.png in Resources */,
 				9C014B0E219291A500E560CF /* icon_60pt@3x.png in Resources */,
+				9C014B192192A2FF00E560CF /* Slice 1@2x.png in Resources */,
 				9C014B0F219291A500E560CF /* icon_60pt@2x.png in Resources */,
 				9C014B00219291A500E560CF /* Slice 1@3x.png in Resources */,
 				9C014A9C21910A1900E560CF /* Assets.xcassets in Resources */,
