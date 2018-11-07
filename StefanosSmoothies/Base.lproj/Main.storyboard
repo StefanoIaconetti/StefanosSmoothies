@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,36 +15,90 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="SplashScreen" customClass="ViewController" customModule="StefanosSmoothies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tzy-0f-CEd">
-                                <rect key="frame" x="177" y="362" width="20" height="17"/>
+                                <rect key="frame" x="323.5" y="177.5" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdo-b7-bDY" userLabel="Hello">
-                                <rect key="frame" x="167.5" y="333.5" width="39" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH2-jf-7dp" userLabel="contButton">
+                                <rect key="frame" x="302.5" y="172.5" width="62" height="30"/>
+                                <state key="normal" title="Continue"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vAY-C1-mv5">
+                                <rect key="frame" x="246" y="35" width="174" height="130"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tzy-0f-CEd" firstAttribute="top" secondItem="Tdo-b7-bDY" secondAttribute="bottom" constant="8" id="GaK-mc-1aM"/>
-                            <constraint firstItem="Tdo-b7-bDY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Nsc-ZW-2b4"/>
-                            <constraint firstItem="tzy-0f-CEd" firstAttribute="centerX" secondItem="Tdo-b7-bDY" secondAttribute="centerX" id="XrS-gi-7PC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tzy-0f-CEd" secondAttribute="bottom" constant="288" id="ZUm-uU-CCL"/>
-                            <constraint firstItem="Tdo-b7-bDY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iUm-mp-OLi"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1NI-O8-afa"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="30L-Ft-xt4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vAY-C1-mv5" secondAttribute="trailing" constant="247" id="Aif-T1-PdP"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Amg-hz-ai0"/>
+                            <constraint firstItem="tzy-0f-CEd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CSC-a5-Krz"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="94" id="EPj-mg-SaR"/>
+                            <constraint firstItem="tzy-0f-CEd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GRb-a2-pLO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vAY-C1-mv5" secondAttribute="trailing" constant="96" id="LFi-tr-00k"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="7.5" id="Qmi-ms-odr"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="33" id="TUA-G3-HCG"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="TnI-OQ-Mpx"/>
+                            <constraint firstItem="tzy-0f-CEd" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="12.5" id="X6l-i6-CBN"/>
+                            <constraint firstItem="tzy-0f-CEd" firstAttribute="top" secondItem="vAY-C1-mv5" secondAttribute="bottom" constant="33" id="Yjv-FN-NyN"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="236" id="a2B-s5-Apo"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="246" id="dlT-DA-V65"/>
+                            <constraint firstItem="UH2-jf-7dp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ha1-Ke-mHQ"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="rOq-Lf-Thi"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s8x-PG-jh8"/>
+                            <constraint firstItem="vAY-C1-mv5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tPy-oM-fch"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vAY-C1-mv5" secondAttribute="trailing" constant="237" id="zyZ-tX-Cfe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Aif-T1-PdP"/>
+                                <exclude reference="zyZ-tX-Cfe"/>
+                                <exclude reference="30L-Ft-xt4"/>
+                                <exclude reference="TnI-OQ-Mpx"/>
+                                <exclude reference="a2B-s5-Apo"/>
+                                <exclude reference="dlT-DA-V65"/>
+                                <exclude reference="s8x-PG-jh8"/>
+                                <exclude reference="tPy-oM-fch"/>
+                                <exclude reference="Qmi-ms-odr"/>
+                                <exclude reference="X6l-i6-CBN"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Aif-T1-PdP"/>
+                                <exclude reference="LFi-tr-00k"/>
+                                <exclude reference="zyZ-tX-Cfe"/>
+                                <exclude reference="30L-Ft-xt4"/>
+                                <exclude reference="Amg-hz-ai0"/>
+                                <exclude reference="EPj-mg-SaR"/>
+                                <include reference="TnI-OQ-Mpx"/>
+                                <exclude reference="a2B-s5-Apo"/>
+                                <include reference="dlT-DA-V65"/>
+                                <exclude reference="rOq-Lf-Thi"/>
+                                <exclude reference="s8x-PG-jh8"/>
+                                <include reference="tPy-oM-fch"/>
+                                <include reference="Qmi-ms-odr"/>
+                                <exclude reference="TUA-G3-HCG"/>
+                                <include reference="X6l-i6-CBN"/>
+                                <exclude reference="Yjv-FN-NyN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="contButton" destination="UH2-jf-7dp" id="76p-65-Ltq"/>
                         <outlet property="indicator" destination="tzy-0f-CEd" id="yNK-zj-GCr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="139.880059970015"/>
+            <point key="canvasLocation" x="195.6521739130435" y="138.40000000000001"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="512" height="512"/>
+    </resources>
 </document>
