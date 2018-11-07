@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C014A9521910A1800E560CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014A9421910A1800E560CF /* AppDelegate.swift */; };
-		9C014A9721910A1800E560CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014A9621910A1800E560CF /* ViewController.swift */; };
+		9C014A9721910A1800E560CF /* SmoothieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014A9621910A1800E560CF /* SmoothieViewController.swift */; };
 		9C014A9A21910A1800E560CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C014A9821910A1800E560CF /* Main.storyboard */; };
 		9C014A9C21910A1900E560CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C014A9B21910A1900E560CF /* Assets.xcassets */; };
 		9C014A9F21910A1900E560CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C014A9D21910A1900E560CF /* LaunchScreen.storyboard */; };
@@ -57,7 +57,7 @@
 /* Begin PBXFileReference section */
 		9C014A9121910A1800E560CF /* StefanosSmoothies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StefanosSmoothies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C014A9421910A1800E560CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C014A9621910A1800E560CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C014A9621910A1800E560CF /* SmoothieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothieViewController.swift; sourceTree = "<group>"; };
 		9C014A9921910A1800E560CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C014A9B21910A1900E560CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C014A9E21910A1900E560CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9C014A9421910A1800E560CF /* AppDelegate.swift */,
-				9C014A9621910A1800E560CF /* ViewController.swift */,
+				9C014A9621910A1800E560CF /* SmoothieViewController.swift */,
 				9C014A9821910A1800E560CF /* Main.storyboard */,
 				9C014A9B21910A1900E560CF /* Assets.xcassets */,
 				9C014A9D21910A1900E560CF /* LaunchScreen.storyboard */,
@@ -346,7 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C014B13219292A100E560CF /* SplashScreen.swift in Sources */,
-				9C014A9721910A1800E560CF /* ViewController.swift in Sources */,
+				9C014A9721910A1800E560CF /* SmoothieViewController.swift in Sources */,
 				9C014A9521910A1800E560CF /* AppDelegate.swift in Sources */,
 				9C014AC3219140F400E560CF /* ShowSplashScreen.swift in Sources */,
 				9C014B1C2192A40000E560CF /* SmoothieModel.xcdatamodeld in Sources */,

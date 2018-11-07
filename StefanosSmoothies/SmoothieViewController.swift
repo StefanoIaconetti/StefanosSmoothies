@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController {
-
+class SmoothieViewController: UIViewController {
+    //Managed context
+    var managedContext: NSManagedObjectContext!
+    
     override func viewDidLoad() {
         
     }
