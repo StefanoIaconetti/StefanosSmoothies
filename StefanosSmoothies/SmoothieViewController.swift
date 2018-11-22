@@ -9,19 +9,24 @@ import Foundation
 import UIKit
 import CoreData
 
-class SmoothieViewController: UITableViewController {
+class SmoothieViewController: UIViewController {
     //Managed context
-    var managedContext: NSManagedObjectContext!
+    var managedContext: NSManagedObjectContext?
     
+    @IBOutlet var tableView: UITableView!
     //This grabs the Smoothies data
     var fetchedResultsController:NSFetchedResultsController<Smoothies>!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let moc = managedContext
+            else { return }
         
         //Step 4.3
         let fetchRequest = NSFetchRequest<Smoothies>(entityName: "Smoothies")
-        fetchRequest.sortDescriptors = []
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
         
         //Step 4.4
         fetchedResultsController.delegate = self
@@ -33,20 +38,6 @@ class SmoothieViewController: UITableViewController {
             print("Problem fetching results - \(error)")
         }
         
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController.fetchedObjects?.count ?? 0
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SmoothieCell", for: indexPath)
-        
-        let smoothie = fetchedResultsController.object(at: indexPath)
-        
-        cell.textLabel?.text = smoothie.name
-        
-        return cell
     }
     
 }
