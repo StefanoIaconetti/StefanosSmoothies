@@ -9,67 +9,114 @@ import Foundation
 import UIKit
 import CoreData
 
-class SmoothieViewController: UIViewController {
-    //Managed context
-    var managedContext: NSManagedObjectContext?
+class SmoothieViewController: UIViewController, AddSmoothieDelegate, MOCViewControllerType  {
+    var managedObjectContext: NSManagedObjectContext?
+    
     
     @IBOutlet var tableView: UITableView!
     //This grabs the Smoothies data
-    var fetchedResultsController:NSFetchedResultsController<Smoothies>!
+    var fetchedResultsController: NSFetchedResultsController<Smoothies>?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let moc = managedContext
+        guard let moc = managedObjectContext
             else { return }
         
-        //Step 4.3
         let fetchRequest = NSFetchRequest<Smoothies>(entityName: "Smoothies")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
         
-        //Step 4.4
-        fetchedResultsController.delegate = self
+        fetchedResultsController?.delegate = self
         
-        //Step 4.3
         do{
-            try fetchedResultsController.performFetch()
+            try fetchedResultsController?.performFetch()
         } catch let error {
             print("Problem fetching results - \(error)")
         }
         
     }
     
-}
-
-//This extension conforms to the NSFetchedResultsControllerdelegate
-extension SmoothieViewController: NSFetchedResultsControllerDelegate{
-    //Didchange method
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.endUpdates()
-    }
-    //Willchange method
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.beginUpdates()
-    }
-    //controller (_ : didchange) method
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        //This will give the user the ability to update, insert move and delete
-        switch type{
-        case .delete:
-            guard let deleteIndexPath = indexPath else { return }
-            tableView.deleteRows(at: [deleteIndexPath], with: .automatic)
-        case .insert:
-            guard let insertPath = newIndexPath else { return }
-            tableView.insertRows(at: [insertPath], with: .automatic)
-        case .move:
-            guard let newPath = newIndexPath, let oldPath = indexPath else { return }
-            tableView.moveRow(at: oldPath, to: newPath)
-        case .update:
-            guard let existingPath = indexPath else { return }
-            tableView.reloadRows(at: [existingPath], with: .automatic)
+    func saveSmoothie(withName name: String) {
+        //Makes sure that the objectcontext is set
+        guard let moc = managedObjectContext
+            else { return }
+        
+        //If we dont have a managed object context there is no saving
+        moc.persist {
+            let smoothie = Smoothies(context: moc)
+            smoothie.name = name
         }
     }
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let navVC = segue.destination as? UINavigationController,
+            let addSmoothieVC = navVC.viewControllers[0] as? AddSmoothie {
+            
+            addSmoothieVC.delegate = self
+        }
+        
+        
+        guard let selectedIndex = tableView.indexPathForSelectedRow
+            else { return }
+        
+        
+        tableView.deselectRow(at: selectedIndex, animated: true)
+    }
+    
+}
+// MARK: - Extensions
+
+extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedResultsController? .fetchedObjects?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SmoothieCell")
+            else { fatalError("Wrong cell identifier requested") }
+        
+        guard let smoothie = fetchedResultsController?.object(at: indexPath)else{return cell}
+        cell.textLabel?.text = smoothie.name
+        return cell
+    }
+}
+
+extension SmoothieViewController: NSFetchedResultsControllerDelegate{
+    //Notifies table view when updates will occur
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    //Notifies table view when updates will end
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    //Responsible for recieveing and processing updates
+    //Recieves type NSFetchedResultsChangeType
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?){
+        //With the recieved type we determine to insert delete move or update
+        switch type{
+        case.insert:
+            guard let insertIndex = newIndexPath else {return}
+            tableView.insertRows(at: [insertIndex], with: .automatic)
+        case .delete:
+            guard let deleteIndex = indexPath else {return}
+            tableView.deleteRows(at: [deleteIndex], with: .automatic)
+        case.move:
+            guard let fromIndex = indexPath, let toIndex = newIndexPath else { return }
+            tableView.moveRow(at: fromIndex, to: toIndex)
+        case .update:
+            guard let updateIndex = indexPath else{ return }
+            tableView.reloadRows(at: [updateIndex], with: .automatic)
+        }
+    }
     
 }

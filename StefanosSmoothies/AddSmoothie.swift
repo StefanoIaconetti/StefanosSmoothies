@@ -12,17 +12,21 @@ import CoreData
 
 class AddSmoothie: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-     @IBOutlet var nameLabel: UILabel!
-    
+     @IBOutlet var nameLabel: UITextField!
     @IBOutlet var ingredientList: UIPickerView!
-    
     @IBOutlet var nameText: UITextField!
-    
     @IBOutlet var addButton: UIButton!
-    
     @IBOutlet var tableView: UITableView!
     var pickerData: [String] = [String]()
     
+    var delegate: AddSmoothieDelegate?
+    
+    @IBAction func addPressed(_ sender: Any) {
+        delegate?.saveSmoothie(withName: nameLabel
+            .text ?? "")
+        navigationController?.popViewController(animated: true)
+    }
+
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -32,11 +36,6 @@ class AddSmoothie: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         // Input the data into the array
         pickerData = ["Blueberries", "Peanut Butter", "Strawberries", "Mangos", "Yogurt", "Spiniach"]
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
