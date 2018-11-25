@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jet-7n-bI1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -192,14 +192,14 @@
                                 <rect key="frame" x="146" y="256" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="My portfolio"/>
+                                <connections>
+                                    <action selector="linkPressed:" destination="jet-7n-bI1" eventType="touchUpInside" id="qAN-T8-XtI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="u57-qT-B82"/>
                     </view>
-                    <connections>
-                        <outlet property="nameLabel" destination="Dq1-Na-4mc" id="gHs-Yc-oTV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5C-bj-11k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,7 +263,6 @@
                     <connections>
                         <outlet property="addButton" destination="TR1-N0-85n" id="ieq-13-o4g"/>
                         <outlet property="ingredientList" destination="isv-BJ-aRa" id="1wz-6I-SuR"/>
-                        <outlet property="nameLabel" destination="zzs-ej-Kbg" id="vb9-CT-8Yt"/>
                         <outlet property="nameText" destination="M7L-BB-8hr" id="HHe-GB-LhN"/>
                         <outlet property="tableView" destination="NV4-2Q-8ey" id="byT-TU-OlZ"/>
                     </connections>
