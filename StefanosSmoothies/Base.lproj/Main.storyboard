@@ -196,10 +196,20 @@
                                     <action selector="linkPressed:" destination="jet-7n-bI1" eventType="touchUpInside" id="qAN-T8-XtI"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glT-VZ-5Sa">
+                                <rect key="frame" x="146" y="318" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sendNotifications:" destination="jet-7n-bI1" eventType="valueChanged" id="p2y-Uk-A1r"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="u57-qT-B82"/>
                     </view>
+                    <connections>
+                        <outlet property="switchCheck" destination="glT-VZ-5Sa" id="uen-jK-M77"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5C-bj-11k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

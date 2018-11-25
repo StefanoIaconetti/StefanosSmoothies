@@ -23,6 +23,7 @@
 		9CB536CE21AA12B3000E55A7 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536CD21AA12B3000E55A7 /* NSManagedObjectContext.swift */; };
 		9CB536D021AA159A000E55A7 /* MOCViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536CF21AA159A000E55A7 /* MOCViewControllerType.swift */; };
 		9CB536D221AA1D92000E55A7 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536D121AA1D92000E55A7 /* AboutMeViewController.swift */; };
+		9CB536D421AA5508000E55A7 /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 9CB536D321AA5508000E55A7 /* Stickers.xcstickers */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		9CB536CD21AA12B3000E55A7 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 		9CB536CF21AA159A000E55A7 /* MOCViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCViewControllerType.swift; sourceTree = "<group>"; };
 		9CB536D121AA1D92000E55A7 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		9CB536D321AA5508000E55A7 /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; path = Stickers.xcstickers; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		9C014A9321910A1800E560CF /* StefanosSmoothies */ = {
 			isa = PBXGroup;
 			children = (
+				9CB536D321AA5508000E55A7 /* Stickers.xcstickers */,
 				9C014B1A2192A40000E560CF /* SmoothieModel.xcdatamodeld */,
 				9C137A1F21AA0E6300208B09 /* AddSmoothieDelegate.swift */,
 				9C014A9421910A1800E560CF /* AppDelegate.swift */,
@@ -256,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB536D421AA5508000E55A7 /* Stickers.xcstickers in Resources */,
 				9C014A9F21910A1900E560CF /* LaunchScreen.storyboard in Resources */,
 				9C014A9C21910A1900E560CF /* Assets.xcassets in Resources */,
 				9C014A9A21910A1800E560CF /* Main.storyboard in Resources */,
