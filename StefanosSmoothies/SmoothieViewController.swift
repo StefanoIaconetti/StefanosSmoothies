@@ -12,7 +12,7 @@ import CoreData
 class SmoothieViewController: UIViewController, AddSmoothieDelegate, MOCViewControllerType  {
     var managedObjectContext: NSManagedObjectContext?
     
-    
+
     @IBOutlet var tableView: UITableView!
     //This grabs the Smoothies data
     var fetchedResultsController: NSFetchedResultsController<Smoothies>?
