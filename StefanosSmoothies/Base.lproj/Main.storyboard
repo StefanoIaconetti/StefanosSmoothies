@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HBg-rs-Ywy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jet-7n-bI1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -150,10 +150,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="tlG-6O-LSE" id="kCL-a7-FSJ"/>
-                                    <outlet property="delegate" destination="tlG-6O-LSE" id="9bh-AA-wSC"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -166,7 +162,11 @@
                         <viewLayoutGuide key="safeArea" id="FDS-Pb-X6J"/>
                     </view>
                     <navigationItem key="navigationItem" title="Stefanos Smoothies" id="WAc-VQ-tvS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uM4-ou-ClJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uM4-ou-ClJ">
+                            <connections>
+                                <segue destination="Pzx-gj-Mtj" kind="show" id="yjZ-9j-Rnh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YZI-I6-i0E" id="oVU-90-0eY"/>
@@ -175,6 +175,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xm-bZ-BgM" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1836" y="137"/>
+        </scene>
+        <!--About Me View Controller-->
+        <scene sceneID="Cch-R4-2IW">
+            <objects>
+                <viewController id="jet-7n-bI1" customClass="AboutMeViewController" customModule="StefanosSmoothies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dy1-xI-MzZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-fl-1n1">
+                                <rect key="frame" x="67" y="55" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dq1-Na-4mc">
+                                <rect key="frame" x="146" y="256" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="My portfolio"/>
+                                <connections>
+                                    <action selector="linkPressed:" destination="jet-7n-bI1" eventType="touchUpInside" id="qAN-T8-XtI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="u57-qT-B82"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5C-bj-11k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="856.82158920539734"/>
+        </scene>
+        <!--Add Smoothie-->
+        <scene sceneID="IoV-Ys-Q6b">
+            <objects>
+                <viewController id="Pzx-gj-Mtj" customClass="AddSmoothie" customModule="StefanosSmoothies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yav-dk-I1W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-z6-UMr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzs-ej-Kbg">
+                                        <rect key="frame" x="166" y="22" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7L-BB-8hr">
+                                        <rect key="frame" x="139" y="76" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isv-BJ-aRa">
+                                        <rect key="frame" x="0.0" y="187" width="375" height="162"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-N0-85n">
+                                        <rect key="frame" x="174" y="341" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addPressed:" destination="Pzx-gj-Mtj" eventType="touchUpInside" id="EFW-oC-Y8Y"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NV4-2Q-8ey">
+                                        <rect key="frame" x="8" y="423" width="359" height="172"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iD5-z6-UMr" firstAttribute="leading" secondItem="k2J-9Y-rtE" secondAttribute="leading" id="2hr-d3-ZoM"/>
+                            <constraint firstItem="k2J-9Y-rtE" firstAttribute="trailing" secondItem="iD5-z6-UMr" secondAttribute="trailing" id="chF-ci-MRU"/>
+                            <constraint firstItem="iD5-z6-UMr" firstAttribute="top" secondItem="k2J-9Y-rtE" secondAttribute="top" id="hmc-JP-KHx"/>
+                            <constraint firstItem="k2J-9Y-rtE" firstAttribute="bottom" secondItem="iD5-z6-UMr" secondAttribute="bottom" id="uBQ-4t-UO3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k2J-9Y-rtE"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="TR1-N0-85n" id="ieq-13-o4g"/>
+                        <outlet property="ingredientList" destination="isv-BJ-aRa" id="1wz-6I-SuR"/>
+                        <outlet property="nameText" destination="M7L-BB-8hr" id="HHe-GB-LhN"/>
+                        <outlet property="tableView" destination="NV4-2Q-8ey" id="byT-TU-OlZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppp-at-ZVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="137.18140929535232"/>
         </scene>
     </scenes>
     <resources>
