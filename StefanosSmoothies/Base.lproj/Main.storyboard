@@ -176,6 +176,35 @@
             </objects>
             <point key="canvasLocation" x="1836" y="137"/>
         </scene>
+        <!--About Me View Controller-->
+        <scene sceneID="Cch-R4-2IW">
+            <objects>
+                <viewController id="jet-7n-bI1" customClass="AboutMeViewController" customModule="StefanosSmoothies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dy1-xI-MzZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-fl-1n1">
+                                <rect key="frame" x="67" y="55" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dq1-Na-4mc">
+                                <rect key="frame" x="146" y="256" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="My portfolio"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="u57-qT-B82"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="Dq1-Na-4mc" id="gHs-Yc-oTV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5C-bj-11k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="856.82158920539734"/>
+        </scene>
         <!--Add Smoothie-->
         <scene sceneID="IoV-Ys-Q6b">
             <objects>

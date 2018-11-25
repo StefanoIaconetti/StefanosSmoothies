@@ -22,6 +22,7 @@
 		9CB536CC21AA11A8000E55A7 /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536CB21AA11A8000E55A7 /* NSPersistentContainer.swift */; };
 		9CB536CE21AA12B3000E55A7 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536CD21AA12B3000E55A7 /* NSManagedObjectContext.swift */; };
 		9CB536D021AA159A000E55A7 /* MOCViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536CF21AA159A000E55A7 /* MOCViewControllerType.swift */; };
+		9CB536D221AA1D92000E55A7 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536D121AA1D92000E55A7 /* AboutMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		9CB536CB21AA11A8000E55A7 /* NSPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
 		9CB536CD21AA12B3000E55A7 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 		9CB536CF21AA159A000E55A7 /* MOCViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCViewControllerType.swift; sourceTree = "<group>"; };
+		9CB536D121AA1D92000E55A7 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9C014A9621910A1800E560CF /* SmoothieViewController.swift */,
 				9CB536CD21AA12B3000E55A7 /* NSManagedObjectContext.swift */,
 				9C014A9821910A1800E560CF /* Main.storyboard */,
+				9CB536D121AA1D92000E55A7 /* AboutMeViewController.swift */,
 				9C744C6621A7A8FB00BF0104 /* AddSmoothie.swift */,
 				9CB536CF21AA159A000E55A7 /* MOCViewControllerType.swift */,
 				9C014A9B21910A1900E560CF /* Assets.xcassets */,
@@ -290,6 +293,7 @@
 				9C014AC3219140F400E560CF /* ShowSplashScreen.swift in Sources */,
 				9CB536CE21AA12B3000E55A7 /* NSManagedObjectContext.swift in Sources */,
 				9C014B1C2192A40000E560CF /* SmoothieModel.xcdatamodeld in Sources */,
+				9CB536D221AA1D92000E55A7 /* AboutMeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
