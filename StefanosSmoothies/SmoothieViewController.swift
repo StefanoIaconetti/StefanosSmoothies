@@ -21,6 +21,9 @@ class SmoothieViewController: UIViewController, AddSmoothieDelegate, MOCViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         guard let moc = managedObjectContext
             else { return }
         
@@ -47,6 +50,14 @@ class SmoothieViewController: UIViewController, AddSmoothieDelegate, MOCViewCont
         moc.persist {
             let smoothie = Smoothies(context: moc)
             smoothie.name = name
+            
+            do{
+                try moc.save()
+                print("No Problem")
+            } catch {
+                moc.rollback()
+                print("Problem")
+            }
         }
     }
     

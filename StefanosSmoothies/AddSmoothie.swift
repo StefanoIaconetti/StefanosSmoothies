@@ -22,8 +22,9 @@ class AddSmoothie: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var delegate: AddSmoothieDelegate?
     
     @IBAction func addPressed(_ sender: Any) {
-        delegate?.saveSmoothie(withName: nameLabel
-            .text ?? "")
+        
+        delegate?.saveSmoothie(withName:  "hello")
+        
         navigationController?.popViewController(animated: true)
     }
 

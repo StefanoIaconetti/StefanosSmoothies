@@ -29,16 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     //Save function, in case of app termination
-    func saveContext(){
-        let context = persistentContainer.viewContext
-        if context.hasChanges{
-            do {
-                try context.save()
-            } catch let error {
-                fatalError("Unresolved error when saving - \(error)")
-            }
-        }
-    }
+//    func saveContext(){
+//        let context = persistentContainer.viewContext
+//        if context.hasChanges{
+//            do {
+//                try context.save()
+//            } catch let error {
+//                fatalError("Unresolved error when saving - \(error)")
+//            }
+//        }
+//    }
     
     //Access the ViewController
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
