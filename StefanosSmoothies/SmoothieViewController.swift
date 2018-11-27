@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class SmoothieViewController: UIViewController, AddSmoothieDelegate, MOCViewControllerType  {
+class SmoothieViewController: UIViewController, MOCViewControllerType  {
     var managedObjectContext: NSManagedObjectContext?
     
 
@@ -25,7 +25,8 @@ class SmoothieViewController: UIViewController, AddSmoothieDelegate, MOCViewCont
         tableView.dataSource = self
         
         guard let moc = managedObjectContext
-            else { return }
+            else { print("nothing here")
+                return }
         
         let fetchRequest = NSFetchRequest<Smoothies>(entityName: "Smoothies")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -41,33 +42,20 @@ class SmoothieViewController: UIViewController, AddSmoothieDelegate, MOCViewCont
         
     }
     
-    func saveSmoothie(withName name: String) {
-        //Makes sure that the objectcontext is set
-        guard let moc = managedObjectContext
-            else { return }
-        
-        //If we dont have a managed object context there is no saving
-        moc.persist {
-            let smoothie = Smoothies(context: moc)
-            smoothie.name = name
-            
-            do{
-                try moc.save()
-                print("No Problem")
-            } catch {
-                moc.rollback()
-                print("Problem")
-            }
-        }
-    }
+   
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let navVC = segue.destination as? UINavigationController,
-            let addSmoothieVC = navVC.viewControllers[0] as? AddSmoothie {
+        if let addSmoothieVC = segue.destination as? AddSmoothie
+            {
             
-            addSmoothieVC.delegate = self
+            //addSmoothieVC.delegate = self
+            addSmoothieVC.managedObjectContext = managedObjectContext
+            
+        } else {
+            print("Cant do")
         }
+        
         
         
         guard let selectedIndex = tableView.indexPathForSelectedRow
