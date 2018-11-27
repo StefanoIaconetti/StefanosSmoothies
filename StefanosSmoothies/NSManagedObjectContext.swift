@@ -11,7 +11,7 @@ import CoreData
 // MARK: - Extensions
 extension NSManagedObjectContext {
     //Helps reduce amount of boilerplate code
-    func persist(block: @escaping ()->Void) {
+    func persist(block: @escaping () -> Void) {
         perform {
             block()
             do{
