@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddSmoothie: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
      @IBOutlet var nameLabel: UITextField!
     @IBOutlet var ingredientList: UIPickerView!
@@ -18,12 +18,15 @@ class AddSmoothie: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet var addButton: UIButton!
     @IBOutlet var tableView: UITableView!
     var pickerData: [String] = [String]()
-    
+    var managedObjectContext: NSManagedObjectContext?
+
     var delegate: AddSmoothieDelegate?
     
     @IBAction func addPressed(_ sender: Any) {
-        delegate?.saveSmoothie(withName: nameLabel
-            .text ?? "")
+        let smoothie = Smoothies(context: managedObjectContext!)
+        smoothie.name = nameText.text
+        saveSmoothie()
+        
         navigationController?.popViewController(animated: true)
     }
 
@@ -48,6 +51,25 @@ class AddSmoothie: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     return pickerData[row]
+    }
+    
+    func saveSmoothie() {
+        //Makes sure that the objectcontext is set
+        guard let moc = managedObjectContext
+            else { return }
+        
+        //If we dont have a managed object context there is no saving
+        moc.persist {
+           
+            
+            do{
+                try moc.save()
+                print("No Problem")
+            } catch {
+                moc.rollback()
+                print("Problem")
+            }
+        }
     }
 }
     
