@@ -8,23 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class SplashScreen: UIViewController {
+    
+    @IBOutlet var contButton: UIButton!
     @IBOutlet var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        contButton.isHidden = true
+        contButton.layer.cornerRadius = 4
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.indicator.isHidden = true
+            self.contButton.isHidden = false
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
