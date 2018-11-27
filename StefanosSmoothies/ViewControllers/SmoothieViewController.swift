@@ -46,7 +46,7 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let addSmoothieVC = segue.destination as? AddSmoothie
+        if let addSmoothieVC = segue.destination as? AddSmoothieViewController
             {
             
             //addSmoothieVC.delegate = self

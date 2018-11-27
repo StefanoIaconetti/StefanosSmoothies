@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddSmoothie: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
      @IBOutlet var nameLabel: UITextField!
     @IBOutlet var ingredientList: UIPickerView!
