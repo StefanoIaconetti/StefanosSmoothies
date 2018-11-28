@@ -68,6 +68,7 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
 // MARK: - Extensions
 
 extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -84,6 +85,29 @@ extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = smoothie.name
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            //Makes sure that the objectcontext is set
+            guard let moc = managedObjectContext
+                else { return }
+           
+            let foundSmoothie = fetchedResultsController?.object(at: indexPath)
+            
+            //If we dont have a managed object context there is no saving
+            moc.persist {
+                do{
+                    moc.delete(foundSmoothie!)
+                    print("No Problem")
+                }
+            }
+        }
+    }
+    
 }
 
 extension SmoothieViewController: NSFetchedResultsControllerDelegate{

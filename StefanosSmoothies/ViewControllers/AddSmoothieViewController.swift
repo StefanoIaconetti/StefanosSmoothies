@@ -31,13 +31,13 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         tableView.reloadData()
     }
     
-//    @IBAction func addPressed(_ sender: Any) {
-//        let smoothie = Smoothies(context: managedObjectContext!)
-//        smoothie.name = nameText.text
-//        saveSmoothie()
-//
-//        navigationController?.popViewController(animated: true)
-//    }
+    @IBAction func confirmPressed(_ sender: Any) {
+        let smoothie = Smoothies(context: managedObjectContext!)
+        smoothie.name = nameText.text
+        saveSmoothie()
+
+        navigationController?.popViewController(animated: true)
+    }
 
     override func viewDidLoad(){
         super.viewDidLoad()
