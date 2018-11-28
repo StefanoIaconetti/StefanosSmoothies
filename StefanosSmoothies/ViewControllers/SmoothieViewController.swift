@@ -98,16 +98,27 @@ extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
            
             let foundSmoothie = fetchedResultsController?.object(at: indexPath)
             
-            //If we dont have a managed object context there is no saving
-            moc.persist {
-                do{
-                    moc.delete(foundSmoothie!)
-                    print("No Problem")
+            let confirmDialog = UIAlertController(title: "Delete this contact?", message: "Are you sure you want to delete this contact?", preferredStyle: .actionSheet)
+            
+            //This is called when the user selects it in the action sheet
+            let deleteAction = UIAlertAction(title: "Yes", style: .destructive, handler: {action in
+                //If we dont have a managed object context there is no saving
+                moc.persist {
+                    do{
+                        moc.delete(foundSmoothie!)
+                        print("No Problem")
+                    }
                 }
-            }
+            })
+            
+            let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            
+            confirmDialog.addAction(deleteAction)
+            confirmDialog.addAction(cancelAction)
+            
+            present(confirmDialog, animated: true, completion:  nil)
         }
     }
-    
 }
 
 extension SmoothieViewController: NSFetchedResultsControllerDelegate{
