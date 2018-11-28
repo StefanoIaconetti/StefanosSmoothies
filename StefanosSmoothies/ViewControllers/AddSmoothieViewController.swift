@@ -3,7 +3,7 @@
 //  StefanosSmoothies
 //
 //  Created by Stefano Iaconetti on 2018-11-22.
-//  Copyright © 2018 Stefano Iaconetti. All rights reserved.
+//  Copyright © 2018 Stefano Iaconetti. All rights reserveed
 //
 
 import Foundation
@@ -22,13 +22,21 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
     var delegate: AddSmoothieDelegate?
     
+    var addedFood: String = "Blueberries"
+    var ingredientArray: [String] = []
+    
     @IBAction func addPressed(_ sender: Any) {
-        let smoothie = Smoothies(context: managedObjectContext!)
-        smoothie.name = nameText.text
-        saveSmoothie()
         
-        navigationController?.popViewController(animated: true)
+        insertIngredient()
     }
+    
+//    @IBAction func addPressed(_ sender: Any) {
+//        let smoothie = Smoothies(context: managedObjectContext!)
+//        smoothie.name = nameText.text
+//        saveSmoothie()
+//
+//        navigationController?.popViewController(animated: true)
+//    }
 
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -39,6 +47,30 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         // Input the data into the array
         pickerData = ["Blueberries", "Peanut Butter", "Strawberries", "Mangos", "Yogurt", "Spiniach"]
+    }
+    
+    func insertIngredient(){
+        
+        if let index = ingredientArray.index(of: addedFood){
+            let indexPath = IndexPath(row: index, section: 0)
+            
+            
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
+            
+            cell.textLabel?.text = ingredientArray[indexPath.item]
+            
+            //Insert this new row into the table
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+        
+        print(addedFood, "hi")
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        addedFood = pickerData[row]
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
