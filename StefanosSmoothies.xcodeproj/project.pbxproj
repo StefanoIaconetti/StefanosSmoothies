@@ -14,8 +14,6 @@
 		9C014A9F21910A1900E560CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C014A9D21910A1900E560CF /* LaunchScreen.storyboard */; };
 		9C014AAA21910A1900E560CF /* StefanosSmoothiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014AA921910A1900E560CF /* StefanosSmoothiesTests.swift */; };
 		9C014AB521910A1900E560CF /* StefanosSmoothiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014AB421910A1900E560CF /* StefanosSmoothiesUITests.swift */; };
-		9C014AC3219140F400E560CF /* ShowSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014AC2219140F400E560CF /* ShowSplashScreen.swift */; };
-		9C014B13219292A100E560CF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014B12219292A100E560CF /* SplashScreen.swift */; };
 		9C014B1C2192A40000E560CF /* SmoothieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C014B1A2192A40000E560CF /* SmoothieModel.xcdatamodeld */; };
 		9C137A2121AA102400208B09 /* AddSmoothieDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C137A1F21AA0E6300208B09 /* AddSmoothieDelegate.swift */; };
 		9C744C6721A7A8FB00BF0104 /* AddSmoothieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C744C6621A7A8FB00BF0104 /* AddSmoothieViewController.swift */; };
@@ -57,8 +55,6 @@
 		9C014AB021910A1900E560CF /* StefanosSmoothiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StefanosSmoothiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C014AB421910A1900E560CF /* StefanosSmoothiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanosSmoothiesUITests.swift; sourceTree = "<group>"; };
 		9C014AB621910A1900E560CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C014AC2219140F400E560CF /* ShowSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSplashScreen.swift; sourceTree = "<group>"; };
-		9C014B12219292A100E560CF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		9C014B1B2192A40000E560CF /* SmoothieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmoothieModel.xcdatamodel; sourceTree = "<group>"; };
 		9C137A1F21AA0E6300208B09 /* AddSmoothieDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSmoothieDelegate.swift; sourceTree = "<group>"; };
 		9C744C6621A7A8FB00BF0104 /* AddSmoothieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSmoothieViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +100,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		92B1443521AEFE9C00DCA50A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				9C137A1F21AA0E6300208B09 /* AddSmoothieDelegate.swift */,
+				9C014A9421910A1800E560CF /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		9C014A8821910A1800E560CF = {
 			isa = PBXGroup;
 			children = (
@@ -127,11 +132,10 @@
 		9C014A9321910A1800E560CF /* StefanosSmoothies */ = {
 			isa = PBXGroup;
 			children = (
+				92B1443521AEFE9C00DCA50A /* Delegates */,
 				927BD28321ADA53C00293058 /* ViewControllers */,
 				9CB536D321AA5508000E55A7 /* Stickers.xcstickers */,
 				9C014B1A2192A40000E560CF /* SmoothieModel.xcdatamodeld */,
-				9C137A1F21AA0E6300208B09 /* AddSmoothieDelegate.swift */,
-				9C014A9421910A1800E560CF /* AppDelegate.swift */,
 				9CB536CB21AA11A8000E55A7 /* NSPersistentContainer.swift */,
 				9CB536CD21AA12B3000E55A7 /* NSManagedObjectContext.swift */,
 				9C014A9821910A1800E560CF /* Main.storyboard */,
@@ -139,8 +143,6 @@
 				9C014A9B21910A1900E560CF /* Assets.xcassets */,
 				9C014A9D21910A1900E560CF /* LaunchScreen.storyboard */,
 				9C014AA021910A1900E560CF /* Info.plist */,
-				9C014AC2219140F400E560CF /* ShowSplashScreen.swift */,
-				9C014B12219292A100E560CF /* SplashScreen.swift */,
 			);
 			path = StefanosSmoothies;
 			sourceTree = "<group>";
@@ -297,12 +299,10 @@
 			files = (
 				9CB536D021AA159A000E55A7 /* MOCViewControllerType.swift in Sources */,
 				9C137A2121AA102400208B09 /* AddSmoothieDelegate.swift in Sources */,
-				9C014B13219292A100E560CF /* SplashScreen.swift in Sources */,
 				9C744C6721A7A8FB00BF0104 /* AddSmoothieViewController.swift in Sources */,
 				9CB536CC21AA11A8000E55A7 /* NSPersistentContainer.swift in Sources */,
 				9C014A9721910A1800E560CF /* SmoothieViewController.swift in Sources */,
 				9C014A9521910A1800E560CF /* AppDelegate.swift in Sources */,
-				9C014AC3219140F400E560CF /* ShowSplashScreen.swift in Sources */,
 				9CB536CE21AA12B3000E55A7 /* NSManagedObjectContext.swift in Sources */,
 				9C014B1C2192A40000E560CF /* SmoothieModel.xcdatamodeld in Sources */,
 				9CB536D221AA1D92000E55A7 /* AboutMeViewController.swift in Sources */,

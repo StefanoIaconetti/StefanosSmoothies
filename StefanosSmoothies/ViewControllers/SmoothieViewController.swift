@@ -46,8 +46,7 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let addSmoothieVC = segue.destination as? AddSmoothieViewController
-            {
+        if let addSmoothieVC = segue.destination as? AddSmoothieViewController{
             
             //addSmoothieVC.delegate = self
             addSmoothieVC.managedObjectContext = managedObjectContext
@@ -69,6 +68,7 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
 // MARK: - Extensions
 
 extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -84,6 +84,38 @@ extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
         guard let smoothie = fetchedResultsController?.object(at: indexPath)else{return cell}
         cell.textLabel?.text = smoothie.name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            //Makes sure that the objectcontext is set
+            guard let moc = managedObjectContext
+                else { return }
+           
+            let foundSmoothie = fetchedResultsController?.object(at: indexPath)
+            
+            let confirmDialog = UIAlertController(title: "Would you like to delete this smoothie?", message: "You are currently deleting \(foundSmoothie!.name!)", preferredStyle: .actionSheet)
+            
+            //This is called when the user selects it in the action sheet
+            let deleteAction = UIAlertAction(title: "Yes", style: .destructive, handler: {action in
+                //If we dont have a managed object context there is no saving
+                moc.persist {
+                        moc.delete(foundSmoothie!)
+                    
+                }
+            })
+            
+            let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            
+            confirmDialog.addAction(deleteAction)
+            confirmDialog.addAction(cancelAction)
+            
+            present(confirmDialog, animated: true, completion:  nil)
+        }
     }
 }
 

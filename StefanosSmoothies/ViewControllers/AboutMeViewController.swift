@@ -45,7 +45,7 @@ class AboutMeViewController: UIViewController{
             let notificationCenter = UNUserNotificationCenter.current()
             notificationCenter.add(request) { (error) in
                 if error != nil {
-                    print("error adding the notification - \(error?.localizedDescription)")
+                    print("error adding the notification - \(String(describing: error?.localizedDescription)) ")
                 }
             }
         }
