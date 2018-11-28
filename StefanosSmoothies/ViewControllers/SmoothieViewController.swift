@@ -98,16 +98,14 @@ extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
            
             let foundSmoothie = fetchedResultsController?.object(at: indexPath)
             
-            let confirmDialog = UIAlertController(title: "Delete this contact?", message: "Are you sure you want to delete this contact?", preferredStyle: .actionSheet)
+            let confirmDialog = UIAlertController(title: "Would you like to delete this smoothie?", message: "You are currently deleting \(foundSmoothie!.name!)", preferredStyle: .actionSheet)
             
             //This is called when the user selects it in the action sheet
             let deleteAction = UIAlertAction(title: "Yes", style: .destructive, handler: {action in
                 //If we dont have a managed object context there is no saving
                 moc.persist {
-                    do{
                         moc.delete(foundSmoothie!)
-                        print("No Problem")
-                    }
+                    
                 }
             })
             
