@@ -59,8 +59,6 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
         ingredientArray.append(addedFood)
 
-        print(addedFood, "hi")
-
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
