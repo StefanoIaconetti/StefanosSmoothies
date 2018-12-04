@@ -12,6 +12,7 @@ import CoreData
 class SmoothieViewController: UIViewController, MOCViewControllerType  {
     var managedObjectContext: NSManagedObjectContext?
     
+    var hideAnimator: CustomModalHideAnimator?
 
     @IBOutlet var tableView: UITableView!
     //This grabs the Smoothies data
@@ -20,6 +21,11 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        transitioningDelegate = self
+        
+        //Creates instance of CustomModalHideAnimator and binds the viewController
+        hideAnimator = CustomModalHideAnimator(withViewController: self)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -118,4 +124,21 @@ extension SmoothieViewController: NSFetchedResultsControllerDelegate{
         }
     }
     
+}
+
+//MARK:- Extension
+extension SmoothieViewController: UIViewControllerTransitioningDelegate{
+    //Adds conformance to the UIViewControllerTransitioningDelegate protocal and assigns viewcontroller as its own transitioning delegate
+    func animationController(forPresentedController presented: UIViewController, presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomModalShowAnimator()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return hideAnimator
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
+        return hideAnimator
+    }
 }

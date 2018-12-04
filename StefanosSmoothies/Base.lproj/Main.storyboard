@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YZI-I6-i0E">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,16 +76,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FDS-Pb-X6J"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Stefanos Smoothies" id="WAc-VQ-tvS">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="eTm-kd-D0M">
+                            <connections>
+                                <segue destination="jet-7n-bI1" kind="presentation" id="imN-GC-WOs"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uM4-ou-ClJ">
                             <connections>
                                 <segue destination="Pzx-gj-Mtj" kind="show" id="yjZ-9j-Rnh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="YZI-I6-i0E" id="oVU-90-0eY"/>
-                        <segue destination="jet-7n-bI1" kind="presentation" id="8Vq-yo-pZk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xm-bZ-BgM" sceneMemberID="firstResponder"/>
@@ -132,6 +138,15 @@
                                     <action selector="sendNotifications:" destination="jet-7n-bI1" eventType="valueChanged" id="p2y-Uk-A1r"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-ss-1dc">
+                                <rect key="frame" x="159" y="606" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Go back"/>
+                                <connections>
+                                    <segue destination="HBg-rs-Ywy" kind="presentation" id="Luw-bh-Nb2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -159,16 +174,16 @@
             </objects>
             <point key="canvasLocation" x="1836" y="856.82158920539734"/>
         </scene>
-        <!--Add Smoothie-->
+        <!--Add Smoothie View Controller-->
         <scene sceneID="IoV-Ys-Q6b">
             <objects>
-                <viewController id="Pzx-gj-Mtj" customClass="AddSmoothie" customModule="StefanosSmoothies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Pzx-gj-Mtj" customClass="AddSmoothieViewController" customModule="StefanosSmoothies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yav-dk-I1W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-z6-UMr">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isv-BJ-aRa">
                                         <rect key="frame" x="28" y="88" width="320" height="216"/>
@@ -177,9 +192,6 @@
                                         <rect key="frame" x="173" y="312" width="30" height="30"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Add"/>
-                                        <connections>
-                                            <action selector="addPressed:" destination="Pzx-gj-Mtj" eventType="touchUpInside" id="EFW-oC-Y8Y"/>
-                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the name of smoothie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7L-BB-8hr">
                                         <rect key="frame" x="88" y="37" width="199.5" height="30"/>
@@ -188,7 +200,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NV4-2Q-8ey">
-                                        <rect key="frame" x="8" y="423" width="359" height="172"/>
+                                        <rect key="frame" x="8" y="423" width="359" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jfn-qC-OBU">
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="172"/>
@@ -222,12 +234,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k2J-9Y-rtE"/>
                     </view>
-                    <connections>
-                        <outlet property="addButton" destination="TR1-N0-85n" id="ieq-13-o4g"/>
-                        <outlet property="ingredientList" destination="isv-BJ-aRa" id="1wz-6I-SuR"/>
-                        <outlet property="nameText" destination="M7L-BB-8hr" id="HHe-GB-LhN"/>
-                        <outlet property="tableView" destination="NV4-2Q-8ey" id="byT-TU-OlZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppp-at-ZVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

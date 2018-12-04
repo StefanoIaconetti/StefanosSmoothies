@@ -34,8 +34,8 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         super.viewDidLoad()
         
         
-        self.ingredientList.delegate = self
-        self.ingredientList.dataSource = self
+        //self.ingredientList.delegate = self
+        //self.ingredientList.dataSource = self
         
         // Input the data into the array
         pickerData = ["Blueberries", "Peanut Butter", "Strawberries", "Mangos", "Yogurt", "Spiniach"]
