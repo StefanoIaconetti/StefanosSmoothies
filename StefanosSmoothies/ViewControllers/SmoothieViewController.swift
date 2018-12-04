@@ -58,8 +58,6 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
             //addSmoothieVC.delegate = self
             addSmoothieVC.managedObjectContext = managedObjectContext
             
-        } else {
-            print("Cant do")
         }
         
         

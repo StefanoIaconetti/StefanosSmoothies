@@ -7,7 +7,7 @@
 //
 
 import Foundation
-// MARK: - AddFamilyMemberDelegate
+// MARK: - AddSmoothieDelegate
 protocol AddSmoothieDelegate {
     func saveSmoothie(withName name: String)
 }

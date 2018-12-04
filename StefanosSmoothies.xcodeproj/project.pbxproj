@@ -10,6 +10,7 @@
 		92A1264021B6CF2300E1569D /* ViewEffectAnimatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1263F21B6CF2300E1569D /* ViewEffectAnimatorType.swift */; };
 		92A1264321B6D34000E1569D /* CustomModalShowAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1264221B6D34000E1569D /* CustomModalShowAnimator.swift */; };
 		92A1264521B6D3D700E1569D /* CustomModalHideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1264421B6D3D700E1569D /* CustomModalHideAnimator.swift */; };
+		92A1264821B6E36300E1569D /* AddIngredientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1264721B6E36300E1569D /* AddIngredientDelegate.swift */; };
 		9C014A9521910A1800E560CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014A9421910A1800E560CF /* AppDelegate.swift */; };
 		9C014A9721910A1800E560CF /* SmoothieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014A9621910A1800E560CF /* SmoothieViewController.swift */; };
 		9C014A9A21910A1800E560CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C014A9821910A1800E560CF /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		92A1263F21B6CF2300E1569D /* ViewEffectAnimatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEffectAnimatorType.swift; sourceTree = "<group>"; };
 		92A1264221B6D34000E1569D /* CustomModalShowAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalShowAnimator.swift; sourceTree = "<group>"; };
 		92A1264421B6D3D700E1569D /* CustomModalHideAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalHideAnimator.swift; sourceTree = "<group>"; };
+		92A1264721B6E36300E1569D /* AddIngredientDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientDelegate.swift; sourceTree = "<group>"; };
 		9C014A9121910A1800E560CF /* StefanosSmoothies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StefanosSmoothies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C014A9421910A1800E560CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C014A9621910A1800E560CF /* SmoothieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothieViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,16 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		92A1264621B6E34200E1569D /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				9C014A9421910A1800E560CF /* AppDelegate.swift */,
+				9C137A1F21AA0E6300208B09 /* AddSmoothieDelegate.swift */,
+				92A1264721B6E36300E1569D /* AddIngredientDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		9C014A8821910A1800E560CF = {
 			isa = PBXGroup;
 			children = (
@@ -150,13 +162,12 @@
 		9C014A9321910A1800E560CF /* StefanosSmoothies */ = {
 			isa = PBXGroup;
 			children = (
+				92A1264621B6E34200E1569D /* Delegates */,
 				92A1264121B6D30C00E1569D /* Animations */,
 				92A1263E21B6CF0200E1569D /* Protocols */,
 				927BD28321ADA53C00293058 /* ViewControllers */,
 				9CB536D321AA5508000E55A7 /* Stickers.xcstickers */,
 				9C014B1A2192A40000E560CF /* SmoothieModel.xcdatamodeld */,
-				9C137A1F21AA0E6300208B09 /* AddSmoothieDelegate.swift */,
-				9C014A9421910A1800E560CF /* AppDelegate.swift */,
 				9CB536CB21AA11A8000E55A7 /* NSPersistentContainer.swift */,
 				9CB536CD21AA12B3000E55A7 /* NSManagedObjectContext.swift */,
 				9C014A9821910A1800E560CF /* Main.storyboard */,
@@ -320,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A1264821B6E36300E1569D /* AddIngredientDelegate.swift in Sources */,
 				9CB536D021AA159A000E55A7 /* MOCViewControllerType.swift in Sources */,
 				92A1264521B6D3D700E1569D /* CustomModalHideAnimator.swift in Sources */,
 				9C137A2121AA102400208B09 /* AddSmoothieDelegate.swift in Sources */,

@@ -20,11 +20,22 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var pickerData: [String] = [String]()
     var managedObjectContext: NSManagedObjectContext?
 
-    var delegate: AddSmoothieDelegate?
+    var smoothieDelegate: AddSmoothieDelegate?
+    
+    var ingredientDelegate: AddIngredientDelegate?
+    
     
     @IBAction func addPressed(_ sender: Any) {
         let smoothie = Smoothies(context: managedObjectContext!)
         smoothie.name = nameText.text
+        
+        let ingredients = Ingredients(context: managedObjectContext!)
+        
+    
+        for ingredientList in pickerData {
+            ingredients.name = ingredientList
+        }
+        
         saveSmoothie()
         
         navigationController?.popViewController(animated: true)
@@ -34,8 +45,8 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         super.viewDidLoad()
         
         
-        //self.ingredientList.delegate = self
-        //self.ingredientList.dataSource = self
+        //ingredientList.delegate = self
+        //ingredientList.dataSource = self
         
         // Input the data into the array
         pickerData = ["Blueberries", "Peanut Butter", "Strawberries", "Mangos", "Yogurt", "Spiniach"]
@@ -60,8 +71,6 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         //If we dont have a managed object context there is no saving
         moc.persist {
-           
-            
             do{
                 try moc.save()
                 print("No Problem")
