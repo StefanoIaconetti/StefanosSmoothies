@@ -16,9 +16,15 @@ import UserNotifications
 class AboutMeViewController: UIViewController{
     //Outlets connected via storyboard
     @IBOutlet weak var switchCheck: UISwitch!
+    
     @IBOutlet var linkToWebsite: UIButton!
     
-    //Animator
+    @IBAction func goBack(_ sender: Any){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     var hideAnimator: CustomModalHideAnimator?
     @IBAction func sendNotifications(_ sender: Any) {
         if(switchCheck.isOn == true){
@@ -66,34 +72,9 @@ class AboutMeViewController: UIViewController{
         super.viewDidLoad()
         
         
-        transitioningDelegate = self
         
         //Creates instance of CustomModalHideAnimator and binds the viewController
         hideAnimator = CustomModalHideAnimator(withViewController: self)
     }
     
-}
-
-
-
-
-
-
-
-
-//MARK:- Extension
-extension AboutMeViewController: UIViewControllerTransitioningDelegate{
-    //Adds conformance to the UIViewControllerTransitioningDelegate protocal and assigns viewcontroller as its own transitioning delegate
-    func animationController(forPresentedController presented: UIViewController, presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return CustomModalShowAnimator()
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return hideAnimator
-    }
-    
-    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        
-        return hideAnimator
-    }
 }

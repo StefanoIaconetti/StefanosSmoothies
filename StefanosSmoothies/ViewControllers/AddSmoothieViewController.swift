@@ -21,6 +21,9 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet var addButton: UIButton!
     @IBOutlet var tableView: UITableView!
     
+    
+    var smoothie: Smoothies?
+    
     //This will be populated with smoothie ingredients
     var ingredientData: [String] = [String]()
     
@@ -60,6 +63,13 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         navigationController?.popViewController(animated: true)
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let smoothie = smoothie {
+            nameText.text = smoothie.name
+            ingredientArray.append((smoothie.ingredients?.name)!)
+        }
+    }
     override func viewDidLoad(){
         super.viewDidLoad()
         

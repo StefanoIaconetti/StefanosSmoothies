@@ -71,7 +71,7 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
             else { return }
         
         //Depending on the cell thats selected you are directed to the EditViewcontroller to then be able to update and edit the content
-        if let editSmoothieVC = segue.destination as? EditSmoothieViewController,
+        if let editSmoothieVC = segue.destination as? AddSmoothieViewController,
             let smoothie = fetchedResultsController?.object(at: selectedIndex) {
             editSmoothieVC.managedObjectContext = managedObjectContext
             editSmoothieVC.smoothie = smoothie

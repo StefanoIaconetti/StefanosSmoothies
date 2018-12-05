@@ -2,13 +2,14 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Ingredients" representedClassName="Ingredients" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="smoothies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Smoothies" inverseName="ingredients" inverseEntity="Smoothies" syncable="YES"/>
     </entity>
     <entity name="Smoothies" representedClassName="Smoothies" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="ingredients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredients" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredients" inverseName="smoothies" inverseEntity="Ingredients" syncable="YES"/>
     </entity>
     <elements>
         <element name="Smoothies" positionX="-54" positionY="-9" width="128" height="75"/>
-        <element name="Ingredients" positionX="-54" positionY="0" width="128" height="60"/>
+        <element name="Ingredients" positionX="-54" positionY="0" width="128" height="75"/>
     </elements>
 </model>
