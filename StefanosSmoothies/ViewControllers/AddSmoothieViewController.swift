@@ -101,10 +101,8 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         moc.persist {
             do{
                 try moc.save()
-                print("No Problem")
             } catch {
                 moc.rollback()
-                print("Problem")
             }
         }
     }

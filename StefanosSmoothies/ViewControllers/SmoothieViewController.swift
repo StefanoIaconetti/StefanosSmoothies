@@ -48,17 +48,24 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addSmoothieVC = segue.destination as? AddSmoothieViewController{
             
-            //addSmoothieVC.delegate = self
             addSmoothieVC.managedObjectContext = managedObjectContext
             
-        } else {
-            print("Cant do")
         }
         
         
         
         guard let selectedIndex = tableView.indexPathForSelectedRow
             else { return }
+        
+        
+        
+        
+        if let editSmoothieVC = segue.destination as? EditSmoothieViewController,
+            let smoothie = fetchedResultsController?.object(at: selectedIndex) {
+            editSmoothieVC.managedObjectContext = managedObjectContext
+            editSmoothieVC.smoothie = smoothie
+            
+        }
         
         
         tableView.deselectRow(at: selectedIndex, animated: true)
