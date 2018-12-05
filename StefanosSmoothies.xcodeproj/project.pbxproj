@@ -26,7 +26,6 @@
 		9CB536D021AA159A000E55A7 /* MOCViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536CF21AA159A000E55A7 /* MOCViewControllerType.swift */; };
 		9CB536D221AA1D92000E55A7 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB536D121AA1D92000E55A7 /* AboutMeViewController.swift */; };
 		9CB536D421AA5508000E55A7 /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 9CB536D321AA5508000E55A7 /* Stickers.xcstickers */; };
-		9CD6839521B337C900F4953A /* EditSmoothieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6839421B337C900F4953A /* EditSmoothieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		9CB536CF21AA159A000E55A7 /* MOCViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCViewControllerType.swift; sourceTree = "<group>"; };
 		9CB536D121AA1D92000E55A7 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		9CB536D321AA5508000E55A7 /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; path = Stickers.xcstickers; sourceTree = "<group>"; };
-		9CD6839421B337C900F4953A /* EditSmoothieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSmoothieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 			children = (
 				9C744C6621A7A8FB00BF0104 /* AddSmoothieViewController.swift */,
 				9C014A9621910A1800E560CF /* SmoothieViewController.swift */,
-				9CD6839421B337C900F4953A /* EditSmoothieViewController.swift */,
 				9CB536D121AA1D92000E55A7 /* AboutMeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -348,7 +345,6 @@
 				9259683921B82A9200E7C7E6 /* AddIngredientDelegate.swift in Sources */,
 				9C014B1C2192A40000E560CF /* SmoothieModel.xcdatamodeld in Sources */,
 				9259683221B8294D00E7C7E6 /* CustomModalShowAnimator.swift in Sources */,
-				9CD6839521B337C900F4953A /* EditSmoothieViewController.swift in Sources */,
 				9CB536D221AA1D92000E55A7 /* AboutMeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

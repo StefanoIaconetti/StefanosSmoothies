@@ -41,7 +41,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YZI-I6-i0E">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.70588235290000001" green="0.99215686270000003" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -196,7 +196,6 @@
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Add smoothie"/>
                                         <connections>
-                                            <action selector="addPressed:" destination="Pzx-gj-Mtj" eventType="touchUpInside" id="v3M-Qr-4lH"/>
                                             <action selector="confirmPressed:" destination="Pzx-gj-Mtj" eventType="touchUpInside" id="V0C-jx-w3E"/>
                                         </connections>
                                     </button>
@@ -241,7 +240,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.70588235294117652" green="0.99215686274509807" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="isv-BJ-aRa" firstAttribute="leading" secondItem="iD5-z6-UMr" secondAttribute="leading" constant="27" id="6Wh-H4-DnT"/>
                                     <constraint firstAttribute="trailing" secondItem="RHJ-PQ-PRQ" secondAttribute="trailing" constant="66" id="8rI-Md-osM"/>
@@ -273,6 +272,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="TR1-N0-85n" id="ieq-13-o4g"/>
+                        <outlet property="confirm" destination="AZA-tp-omr" id="NuQ-BT-H7z"/>
                         <outlet property="ingredientList" destination="isv-BJ-aRa" id="1wz-6I-SuR"/>
                         <outlet property="nameText" destination="M7L-BB-8hr" id="HHe-GB-LhN"/>
                         <outlet property="tableView" destination="RHJ-PQ-PRQ" id="We5-r4-pTh"/>
@@ -284,6 +284,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yjZ-9j-Rnh"/>
+        <segue reference="gDM-PH-wgW"/>
     </inferredMetricsTieBreakers>
 </document>

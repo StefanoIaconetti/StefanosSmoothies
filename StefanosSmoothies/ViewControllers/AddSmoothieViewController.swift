@@ -19,7 +19,10 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet var ingredientList: UIPickerView!
     @IBOutlet var nameText: UITextField!
     @IBOutlet var addButton: UIButton!
+    @IBOutlet var confirm: UIButton!
     @IBOutlet var tableView: UITableView!
+    
+    var isEdit: Bool = false
     
     
     var smoothie: Smoothies?
@@ -49,26 +52,37 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     //When this button is pressed smoothie is created and ingredients are added to it
     @IBAction func confirmPressed(_ sender: Any) {
-        let smoothie = Smoothies(context: managedObjectContext!)
-        smoothie.name = nameText.text
-
-
-        for ingredientList in ingredientArray {
-            smoothie.ingredients?.name = ingredientList
+         if isEdit{
+            smoothie?.name = nameText.text
+            smoothie?.ingredients = ingredientArray as NSArray
+            
+            saveSmoothie()
+            navigationController?.popViewController(animated: true)
+         }else{
+            let smoothie = Smoothies(context: managedObjectContext!)
+            smoothie.name = nameText.text
+            smoothie.ingredients = ingredientArray as NSArray
+            saveSmoothie()
+            navigationController?.popViewController(animated: true)
         }
-        
-        
-        saveSmoothie()
-        
-        navigationController?.popViewController(animated: true)
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
         if let smoothie = smoothie {
             nameText.text = smoothie.name
-            ingredientArray.append((smoothie.ingredients?.name)!)
+            
+            ingredientArray.append(contentsOf: smoothie.ingredients as! [String])
+            
+            tableView.reloadData()
         }
+        
+        if isEdit{
+            confirm.setTitle("Update Smoothie", for: .normal)
+        }else{
+            confirm.setTitle("Add Smoothie", for: .normal)
+        }
+        
     }
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -128,6 +142,15 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
     }
     
+    //This allows the user to delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            
+                self.ingredientArray.remove(at: indexPath.row)
+                tableView.reloadData()
+    }
+}
+    
     //Saves the smoothie
     func saveSmoothie() {
         //Makes sure that the objectcontext is set
@@ -144,7 +167,3 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
 }
-    
-
-
-

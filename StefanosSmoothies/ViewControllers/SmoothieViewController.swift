@@ -64,6 +64,7 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addSmoothieVC = segue.destination as? AddSmoothieViewController{
             addSmoothieVC.managedObjectContext = managedObjectContext
+            addSmoothieVC.isEdit = false
         }
         
         //Finds which cell is being selected
@@ -75,7 +76,7 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
             let smoothie = fetchedResultsController?.object(at: selectedIndex) {
             editSmoothieVC.managedObjectContext = managedObjectContext
             editSmoothieVC.smoothie = smoothie
-            
+            editSmoothieVC.isEdit = true
         }
         
         
