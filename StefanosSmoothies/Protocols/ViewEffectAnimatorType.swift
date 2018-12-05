@@ -2,7 +2,7 @@
 //  ViewEffectAnimatorType.swift
 //  StefanosSmoothies
 //
-//  Created by Web on 2018-12-04.
+//  Created by Stefano iaconetti on 2018-12-04.
 //  Copyright © 2018 Stefano Iaconetti. All rights reserved.
 //
 

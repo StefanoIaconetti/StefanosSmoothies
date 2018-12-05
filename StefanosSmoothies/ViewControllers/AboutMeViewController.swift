@@ -2,20 +2,23 @@
 //  AboutMeViewController.swift
 //  StefanosSmoothies
 //
-//  Created by Jaimilyn Vanderheyde on 2018-11-24.
+//  Created by Stefano Iaconetti on 2018-11-24.
 //  Copyright © 2018 Stefano Iaconetti. All rights reserved.
 //
 
+//Imports
 import Foundation
 import UIKit
 import CoreData
 import UserNotifications
 
+//This viewcontroller gives the user access to my portfolio website, ability to use notifications and has a picture of me
 class AboutMeViewController: UIViewController{
+    //Outlets connected via storyboard
     @IBOutlet weak var switchCheck: UISwitch!
-    
     @IBOutlet var linkToWebsite: UIButton!
     
+    //Animator
     var hideAnimator: CustomModalHideAnimator?
     @IBAction func sendNotifications(_ sender: Any) {
         if(switchCheck.isOn == true){

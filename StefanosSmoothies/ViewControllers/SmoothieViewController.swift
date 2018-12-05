@@ -4,21 +4,27 @@
 //
 //  Created by Stefano Iaconetti on 2018-11-05.
 //  Copyright © 2018 Stefano Iaconetti. All rights reserved.
-//
+
+//Imports
 import Foundation
 import UIKit
 import CoreData
 
+//SmoothieViewController contains all of the tableview data
 class SmoothieViewController: UIViewController, MOCViewControllerType  {
+    //MOC
     var managedObjectContext: NSManagedObjectContext?
     
+    //Creates the animator
     var hideAnimator: CustomModalHideAnimator?
     
+    //Linked to the tableview in the storyboard
     @IBOutlet var tableView: UITableView!
+    
     //This grabs the Smoothies data
     var fetchedResultsController: NSFetchedResultsController<Smoothies>?
 
-    
+    //ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,17 +37,19 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        //Creating the moc or it returns nothing
         guard let moc = managedObjectContext
             else { print("nothing here")
                 return }
         
+        //Creates a fetch request
         let fetchRequest = NSFetchRequest<Smoothies>(entityName: "Smoothies")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
         
         fetchedResultsController?.delegate = self
         
+        //Attempts to perform the fetch, if not return an error
         do{
             try fetchedResultsController?.performFetch()
         } catch let error {
@@ -55,19 +63,14 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addSmoothieVC = segue.destination as? AddSmoothieViewController{
-            
             addSmoothieVC.managedObjectContext = managedObjectContext
-            
         }
         
-        
-        
+        //Finds which cell is being selected
         guard let selectedIndex = tableView.indexPathForSelectedRow
             else { return }
         
-        
-        
-        
+        //Depending on the cell thats selected you are directed to the EditViewcontroller to then be able to update and edit the content
         if let editSmoothieVC = segue.destination as? EditSmoothieViewController,
             let smoothie = fetchedResultsController?.object(at: selectedIndex) {
             editSmoothieVC.managedObjectContext = managedObjectContext
@@ -80,8 +83,9 @@ class SmoothieViewController: UIViewController, MOCViewControllerType  {
     }
     
 }
-// MARK: - Extensions
 
+// MARK: - Extensions
+//Extension to the tableview delegate and datasource
 extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -92,6 +96,7 @@ extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
         return fetchedResultsController? .fetchedObjects?.count ?? 0
     }
     
+    //Grabs the correct cell and adds the information
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SmoothieCell")
             else { fatalError("Wrong cell identifier requested") }
@@ -105,15 +110,18 @@ extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     
+    //This allows the user to delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             //Makes sure that the objectcontext is set
             guard let moc = managedObjectContext
                 else { return }
            
+            //Smoothie that is found
             let foundSmoothie = fetchedResultsController?.object(at: indexPath)
             
-            let confirmDialog = UIAlertController(title: "Would you like to delete this smoothie?", message: "You are currently deleting \(foundSmoothie!.name!)", preferredStyle: .actionSheet)
+            //Dialog that will be presented
+            let message = UIAlertController(title: "Would you like to delete this smoothie?", message: "You are currently deleting \(foundSmoothie!.name!)", preferredStyle: .actionSheet)
             
             //This is called when the user selects it in the action sheet
             let deleteAction = UIAlertAction(title: "Yes", style: .destructive, handler: {action in
@@ -124,12 +132,15 @@ extension SmoothieViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             })
             
+            //Gives them the ability to cancel
             let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
             
-            confirmDialog.addAction(deleteAction)
-            confirmDialog.addAction(cancelAction)
+            //Adding the actions
+            message.addAction(deleteAction)
+            message.addAction(cancelAction)
             
-            present(confirmDialog, animated: true, completion:  nil)
+            //Displays
+            present(message, animated: true, completion:  nil)
         }
     }
 }
@@ -167,11 +178,6 @@ extension SmoothieViewController: NSFetchedResultsControllerDelegate{
     
 }
 
-
-
-
-
-//MARK:- Extension
 extension SmoothieViewController: UIViewControllerTransitioningDelegate{
     //Adds conformance to the UIViewControllerTransitioningDelegate protocal and assigns viewcontroller as its own transitioning delegate
     func animationController(forPresentedController presented: UIViewController, presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

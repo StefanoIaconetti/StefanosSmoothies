@@ -2,12 +2,12 @@
 //  AddIngredientDelegate.swift
 //  StefanosSmoothies
 //
-//  Created by Web on 2018-12-04.
+//  Created by Stefano Iaconetti on 2018-12-04.
 //  Copyright © 2018 Stefano Iaconetti. All rights reserved.
 //
 
 import Foundation
-// MARK: - AddIngredientDelegate
+//AddIngredientDelegate that contains saveIngredient
 protocol AddIngredientDelegate {
     func saveIngredient(withName name: String)
 }

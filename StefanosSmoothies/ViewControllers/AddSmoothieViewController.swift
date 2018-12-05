@@ -6,33 +6,45 @@
 //  Copyright © 2018 Stefano Iaconetti. All rights reserveed
 //
 
+//Imports
 import Foundation
 import UIKit
 import CoreData
 
+//This viewcontroller will allow the user to create different smoothies and ingredients
 class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
     
+    //All outlets associated with the viewcontroller
      @IBOutlet var nameLabel: UITextField!
     @IBOutlet var ingredientList: UIPickerView!
     @IBOutlet var nameText: UITextField!
     @IBOutlet var addButton: UIButton!
     @IBOutlet var tableView: UITableView!
-    var pickerData: [String] = [String]()
+    
+    //This will be populated with smoothie ingredients
+    var ingredientData: [String] = [String]()
+    
+    //The managed object context
     var managedObjectContext: NSManagedObjectContext?
 
+    //Delegates
     var delegate: AddSmoothieDelegate?
     var ingredientDelegate: AddIngredientDelegate?
     
-    
+    //The current food that is about to be added, starts with blueberries
     var addedFood: String = "Blueberries"
+    
+    //This array will be what the tableview consists of
     var ingredientArray: [String] = []
     
+    //When the add button is pressed an ingredient is inserted then data is reloaded
     @IBAction func addPressed(_ sender: Any) {
         
         insertIngredient()
         tableView.reloadData()
     }
     
+    //When this button is pressed smoothie is created and ingredients are added to it
     @IBAction func confirmPressed(_ sender: Any) {
         let smoothie = Smoothies(context: managedObjectContext!)
         smoothie.name = nameText.text
@@ -58,20 +70,24 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.ingredientList.delegate = self
         self.ingredientList.dataSource = self
         
-        // Input the data into the array
-        pickerData = ["Blueberries", "Peanut Butter", "Strawberries", "Mangos", "Yogurt", "Spiniach"]
+        //Array with different smoothie ingredients
+        ingredientData = ["Blueberries", "Peanut Butter", "Strawberries", "Mangos", "Yogurt", "Spiniach", "Banana", "Raspberries", "Pineapples", "Sorbet", "Ice", "Juice"]
         
         
     }
     
+    //Function inserts an ingredient into the table
     func insertIngredient(){
-
-        ingredientArray.append(addedFood)
-
+        //If the ingredient already exists nothing happens, if not it enters the data into the table
+        if ingredientArray.contains(addedFood){
+            print("Already an item")
+        }else{
+            ingredientArray.append(addedFood)
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        addedFood = pickerData[row]
+        addedFood = ingredientData[row]
         
     }
     
@@ -80,11 +96,11 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return ingredientData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return pickerData[row]
+    return ingredientData[row]
     }
     
     
@@ -92,6 +108,7 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return ingredientArray.count
     }
     
+    //Populates a cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
         
@@ -101,6 +118,7 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
     }
     
+    //Saves the smoothie
     func saveSmoothie() {
         //Makes sure that the objectcontext is set
         guard let moc = managedObjectContext

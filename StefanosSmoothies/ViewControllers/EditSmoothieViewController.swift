@@ -2,7 +2,7 @@
 //  EditSmoothieViewController.swift
 //  StefanosSmoothies
 //
-//  Created by Jaimilyn Vanderheyde on 2018-12-01.
+//  Created by Stefano Iaconetti on 2018-12-01.
 //  Copyright © 2018 Stefano Iaconetti. All rights reserved.
 //
 
@@ -20,6 +20,9 @@ class EditSmoothieViewController: UIViewController{
     @IBOutlet var addButton: UIButton!
     @IBOutlet var tableView: UITableView!
     var pickerData: [String] = [String]()
+    var fetchedResultsController: NSFetchedResultsController<Smoothies>?
+    var addedFood: String = "Blueberries"
+    var ingredientArray: [String] = []
     
     var smoothie: Smoothies?
     
@@ -29,10 +32,122 @@ class EditSmoothieViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
+//
+//        for ingredientList in smoothie?.ingredients {
+//
+//        }
+
+        
+        let fetchRequest = NSFetchRequest<Smoothies>(entityName: "Smoothies")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "ingredients", ascending: true)]
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultsController?.delegate = self
+        
+        do{
+            try fetchedResultsController?.performFetch()
+        } catch let error {
+            print("Problem fetching results - \(error)")
+        }
+        
         if let smoothie = smoothie {
             nameText.text = smoothie.name
         }
         
     }
 
+}
+
+
+
+
+// MARK: - Extensions
+
+extension EditSmoothieViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedResultsController? .fetchedObjects?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SmoothieCell")
+            else { fatalError("Wrong cell identifier requested") }
+        
+        guard let smoothie = fetchedResultsController?.object(at: indexPath)else{return cell}
+        cell.textLabel?.text = smoothie.name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            //Makes sure that the objectcontext is set
+            guard let moc = managedObjectContext
+                else { return }
+            
+            let foundSmoothie = fetchedResultsController?.object(at: indexPath)
+            
+            let confirmDialog = UIAlertController(title: "Would you like to delete this smoothie?", message: "You are currently deleting \(foundSmoothie!.name!)", preferredStyle: .actionSheet)
+            
+            //This is called when the user selects it in the action sheet
+            let deleteAction = UIAlertAction(title: "Yes", style: .destructive, handler: {action in
+                //If we dont have a managed object context there is no saving
+                moc.persist {
+                    moc.delete(foundSmoothie!)
+                    
+                }
+            })
+            
+            let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            
+            confirmDialog.addAction(deleteAction)
+            confirmDialog.addAction(cancelAction)
+            
+            present(confirmDialog, animated: true, completion:  nil)
+        }
+    }
+}
+
+
+extension EditSmoothieViewController: NSFetchedResultsControllerDelegate{
+    //Notifies table view when updates will occur
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    //Notifies table view when updates will end
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    //Responsible for recieveing and processing updates
+    //Recieves type NSFetchedResultsChangeType
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?){
+        //With the recieved type we determine to insert delete move or update
+        switch type{
+        case.insert:
+            guard let insertIndex = newIndexPath else {return}
+            tableView.insertRows(at: [insertIndex], with: .automatic)
+        case .delete:
+            guard let deleteIndex = indexPath else {return}
+            tableView.deleteRows(at: [deleteIndex], with: .automatic)
+        case.move:
+            guard let fromIndex = indexPath, let toIndex = newIndexPath else { return }
+            tableView.moveRow(at: fromIndex, to: toIndex)
+        case .update:
+            guard let updateIndex = indexPath else{ return }
+            tableView.reloadRows(at: [updateIndex], with: .automatic)
+        }
+    }
+    
 }
