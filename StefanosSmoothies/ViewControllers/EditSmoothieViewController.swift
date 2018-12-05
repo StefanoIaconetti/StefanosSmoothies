@@ -20,12 +20,19 @@ class EditSmoothieViewController: UIViewController{
     @IBOutlet var addButton: UIButton!
     @IBOutlet var tableView: UITableView!
     var pickerData: [String] = [String]()
+    
     var smoothie: Smoothies?
+    
     var managedObjectContext: NSManagedObjectContext?
     
     
     override func viewDidLoad() {
-        nameText?.text = smoothie?.name
+        super.viewDidLoad()
+        
+        if let smoothie = smoothie {
+            nameText.text = smoothie.name
+        }
+        
     }
 
 }

@@ -36,12 +36,12 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBAction func confirmPressed(_ sender: Any) {
         let smoothie = Smoothies(context: managedObjectContext!)
         smoothie.name = nameText.text
-        let ingredients = Ingredients(context: managedObjectContext!)
-        
-        
+
+
         for ingredientList in ingredientArray {
-            ingredients.name = ingredientList
+            smoothie.ingredients?.name = ingredientList
         }
+        
         
         saveSmoothie()
         

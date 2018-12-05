@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5C-bj-11k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="940"/>
+            <point key="canvasLocation" x="1836" y="974"/>
         </scene>
         <!--Add Smoothie View Controller-->
         <scene sceneID="IoV-Ys-Q6b">
@@ -340,6 +340,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hM5-S1-WfP"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="Ha4-uI-map" id="BTU-Fm-ToD"/>
+                        <outlet property="ingredientList" destination="DVw-Er-QpD" id="Tws-Bl-dQa"/>
+                        <outlet property="nameText" destination="5XJ-ZZ-EFT" id="3BX-Do-rOh"/>
+                        <outlet property="tableView" destination="Jsy-xL-Gcr" id="i7o-qq-fIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIb-nC-Y68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
