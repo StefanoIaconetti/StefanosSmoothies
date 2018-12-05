@@ -21,6 +21,8 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var managedObjectContext: NSManagedObjectContext?
 
     var delegate: AddSmoothieDelegate?
+    var ingredientDelegate: AddIngredientDelegate?
+    
     
     var addedFood: String = "Blueberries"
     var ingredientArray: [String] = []
@@ -34,8 +36,15 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBAction func confirmPressed(_ sender: Any) {
         let smoothie = Smoothies(context: managedObjectContext!)
         smoothie.name = nameText.text
+        let ingredients = Ingredients(context: managedObjectContext!)
+        
+        
+        for ingredientList in ingredientArray {
+            ingredients.name = ingredientList
+        }
+        
         saveSmoothie()
-
+        
         navigationController?.popViewController(animated: true)
     }
 

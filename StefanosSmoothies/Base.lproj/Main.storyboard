@@ -82,7 +82,7 @@
                     <navigationItem key="navigationItem" title="Stefanos Smoothies" id="WAc-VQ-tvS">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="ssd-Tl-bxN">
                             <connections>
-                                <segue destination="jet-7n-bI1" kind="show" id="qoS-ZC-Uxw"/>
+                                <segue destination="jet-7n-bI1" kind="presentation" id="Wwu-GC-kPP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uM4-ou-ClJ">
@@ -108,13 +108,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-fl-1n1">
-                                <rect key="frame" x="67" y="99" width="240" height="128"/>
+                                <rect key="frame" x="67" y="55" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="1p7-ps-ZPB"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dq1-Na-4mc">
-                                <rect key="frame" x="189" y="274" width="83" height="30"/>
+                                <rect key="frame" x="189" y="230" width="83" height="30"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="My portfolio"/>
                                 <connections>
@@ -122,23 +122,31 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to my portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhP-J4-XBq">
-                                <rect key="frame" x="16" y="274" width="148" height="21"/>
+                                <rect key="frame" x="16" y="230" width="148" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-MH-lmZ">
-                                <rect key="frame" x="16" y="326" width="129" height="21"/>
+                                <rect key="frame" x="16" y="282" width="129" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glT-VZ-5Sa">
-                                <rect key="frame" x="189" y="321" width="51" height="31"/>
+                                <rect key="frame" x="189" y="277" width="51" height="31"/>
                                 <connections>
                                     <action selector="sendNotifications:" destination="jet-7n-bI1" eventType="valueChanged" id="p2y-Uk-A1r"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7g-fS-FnL">
+                                <rect key="frame" x="164" y="502" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="HBg-rs-Ywy" kind="presentation" id="u5P-Dc-pZl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

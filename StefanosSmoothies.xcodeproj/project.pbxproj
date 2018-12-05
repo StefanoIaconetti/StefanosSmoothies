@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9259683221B8294D00E7C7E6 /* CustomModalShowAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259683121B8294D00E7C7E6 /* CustomModalShowAnimator.swift */; };
+		9259683421B8296A00E7C7E6 /* CustomModalHideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259683321B8296A00E7C7E6 /* CustomModalHideAnimator.swift */; };
+		9259683721B8299600E7C7E6 /* ViewEffectAnimatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259683621B8299600E7C7E6 /* ViewEffectAnimatorType.swift */; };
+		9259683921B82A9200E7C7E6 /* AddIngredientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259683821B82A9200E7C7E6 /* AddIngredientDelegate.swift */; };
 		9C014A9521910A1800E560CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014A9421910A1800E560CF /* AppDelegate.swift */; };
 		9C014A9721910A1800E560CF /* SmoothieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C014A9621910A1800E560CF /* SmoothieViewController.swift */; };
 		9C014A9A21910A1800E560CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C014A9821910A1800E560CF /* Main.storyboard */; };
@@ -43,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9259683121B8294D00E7C7E6 /* CustomModalShowAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalShowAnimator.swift; sourceTree = "<group>"; };
+		9259683321B8296A00E7C7E6 /* CustomModalHideAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalHideAnimator.swift; sourceTree = "<group>"; };
+		9259683621B8299600E7C7E6 /* ViewEffectAnimatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEffectAnimatorType.swift; sourceTree = "<group>"; };
+		9259683821B82A9200E7C7E6 /* AddIngredientDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientDelegate.swift; sourceTree = "<group>"; };
 		9C014A9121910A1800E560CF /* StefanosSmoothies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StefanosSmoothies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C014A9421910A1800E560CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C014A9621910A1800E560CF /* SmoothieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothieViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9259683021B8292800E7C7E6 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				9259683121B8294D00E7C7E6 /* CustomModalShowAnimator.swift */,
+				9259683321B8296A00E7C7E6 /* CustomModalHideAnimator.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		9259683521B8298500E7C7E6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9259683621B8299600E7C7E6 /* ViewEffectAnimatorType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		927BD28321ADA53C00293058 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +133,7 @@
 			children = (
 				9C137A1F21AA0E6300208B09 /* AddSmoothieDelegate.swift */,
 				9C014A9421910A1800E560CF /* AppDelegate.swift */,
+				9259683821B82A9200E7C7E6 /* AddIngredientDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -135,6 +161,8 @@
 		9C014A9321910A1800E560CF /* StefanosSmoothies */ = {
 			isa = PBXGroup;
 			children = (
+				9259683521B8298500E7C7E6 /* Protocols */,
+				9259683021B8292800E7C7E6 /* Animations */,
 				92B1443521AEFE9C00DCA50A /* Delegates */,
 				927BD28321ADA53C00293058 /* ViewControllers */,
 				9CB536D321AA5508000E55A7 /* Stickers.xcstickers */,
@@ -300,14 +328,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9259683721B8299600E7C7E6 /* ViewEffectAnimatorType.swift in Sources */,
 				9CB536D021AA159A000E55A7 /* MOCViewControllerType.swift in Sources */,
+				9259683421B8296A00E7C7E6 /* CustomModalHideAnimator.swift in Sources */,
 				9C137A2121AA102400208B09 /* AddSmoothieDelegate.swift in Sources */,
 				9C744C6721A7A8FB00BF0104 /* AddSmoothieViewController.swift in Sources */,
 				9CB536CC21AA11A8000E55A7 /* NSPersistentContainer.swift in Sources */,
 				9C014A9721910A1800E560CF /* SmoothieViewController.swift in Sources */,
 				9C014A9521910A1800E560CF /* AppDelegate.swift in Sources */,
 				9CB536CE21AA12B3000E55A7 /* NSManagedObjectContext.swift in Sources */,
+				9259683921B82A9200E7C7E6 /* AddIngredientDelegate.swift in Sources */,
 				9C014B1C2192A40000E560CF /* SmoothieModel.xcdatamodeld in Sources */,
+				9259683221B8294D00E7C7E6 /* CustomModalShowAnimator.swift in Sources */,
 				9CD6839521B337C900F4953A /* EditSmoothieViewController.swift in Sources */,
 				9CB536D221AA1D92000E55A7 /* AboutMeViewController.swift in Sources */,
 			);
