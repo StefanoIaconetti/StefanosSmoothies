@@ -41,7 +41,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YZI-I6-i0E">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.70588235290000001" green="0.99215686270000003" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,12 +57,11 @@
                                                     <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="textColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="Pzx-gj-Mtj" kind="show" id="gDM-PH-wgW"/>
                                         </connections>
@@ -107,13 +106,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-fl-1n1">
-                                <rect key="frame" x="67" y="55" width="240" height="128"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dq1-Na-4mc">
                                 <rect key="frame" x="189" y="230" width="83" height="30"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="My portfolio"/>
+                                <state key="normal" title="My portfolio">
+                                    <color key="titleColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="linkPressed:" destination="jet-7n-bI1" eventType="touchUpInside" id="qAN-T8-XtI"/>
                                 </connections>
@@ -137,34 +135,38 @@
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DV-S9-8pZ">
-                                <rect key="frame" x="164" y="430" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="162" y="443" width="57" height="30"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Go back">
+                                    <color key="titleColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="goBack:" destination="jet-7n-bI1" eventType="touchUpInside" id="9mn-Xe-2X9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="PhotoOfStefanoIaconetti" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-fl-1n1">
+                                <rect key="frame" x="102" y="59" width="170" height="134"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="glT-VZ-5Sa" firstAttribute="top" secondItem="Dq1-Na-4mc" secondAttribute="bottom" constant="17" id="5ww-zz-fjH"/>
                             <constraint firstItem="yhP-J4-XBq" firstAttribute="leading" secondItem="u57-qT-B82" secondAttribute="leading" constant="16" id="7uD-a1-4zX"/>
-                            <constraint firstItem="gNY-fl-1n1" firstAttribute="leading" secondItem="u57-qT-B82" secondAttribute="leading" constant="67" id="AlH-xb-jGM"/>
-                            <constraint firstItem="u57-qT-B82" firstAttribute="trailing" secondItem="gNY-fl-1n1" secondAttribute="trailing" constant="68" id="I4j-ga-ZRX"/>
                             <constraint firstItem="8Je-MH-lmZ" firstAttribute="leading" secondItem="u57-qT-B82" secondAttribute="leading" constant="16" id="KoH-L5-Yd3"/>
                             <constraint firstItem="8Je-MH-lmZ" firstAttribute="top" secondItem="yhP-J4-XBq" secondAttribute="bottom" constant="31" id="MaQ-Ul-rlj"/>
-                            <constraint firstItem="Dq1-Na-4mc" firstAttribute="top" secondItem="gNY-fl-1n1" secondAttribute="bottom" constant="47" id="PJv-e7-VW3"/>
-                            <constraint firstItem="yhP-J4-XBq" firstAttribute="top" secondItem="gNY-fl-1n1" secondAttribute="bottom" constant="47" id="SBj-gv-xtD"/>
                             <constraint firstItem="glT-VZ-5Sa" firstAttribute="leading" secondItem="8Je-MH-lmZ" secondAttribute="trailing" constant="44" id="UKm-xn-IkM"/>
-                            <constraint firstItem="2DV-S9-8pZ" firstAttribute="leading" secondItem="u57-qT-B82" secondAttribute="leading" constant="164" id="XDq-O3-qR0"/>
+                            <constraint firstItem="u57-qT-B82" firstAttribute="bottom" secondItem="2DV-S9-8pZ" secondAttribute="bottom" constant="194" id="Z54-33-Qkf"/>
                             <constraint firstItem="u57-qT-B82" firstAttribute="bottom" secondItem="8Je-MH-lmZ" secondAttribute="bottom" constant="364" id="asE-Sy-txr"/>
                             <constraint firstItem="u57-qT-B82" firstAttribute="trailing" secondItem="Dq1-Na-4mc" secondAttribute="trailing" constant="103" id="dLl-UR-AK4"/>
                             <constraint firstItem="u57-qT-B82" firstAttribute="trailing" secondItem="glT-VZ-5Sa" secondAttribute="trailing" constant="137" id="eEM-L1-yfy"/>
-                            <constraint firstItem="gNY-fl-1n1" firstAttribute="top" secondItem="u57-qT-B82" secondAttribute="top" constant="35" id="hOq-wk-2nH"/>
-                            <constraint firstItem="u57-qT-B82" firstAttribute="bottom" secondItem="2DV-S9-8pZ" secondAttribute="bottom" constant="207" id="ny3-iO-28I"/>
-                            <constraint firstItem="gNY-fl-1n1" firstAttribute="centerX" secondItem="u57-qT-B82" secondAttribute="centerX" id="q3G-2n-bNn"/>
-                            <constraint firstItem="u57-qT-B82" firstAttribute="trailing" secondItem="2DV-S9-8pZ" secondAttribute="trailing" constant="165" id="qtg-qv-yGg"/>
+                            <constraint firstItem="gNY-fl-1n1" firstAttribute="top" secondItem="u57-qT-B82" secondAttribute="top" constant="39" id="f6l-lK-izj"/>
+                            <constraint firstItem="gNY-fl-1n1" firstAttribute="leading" secondItem="u57-qT-B82" secondAttribute="leading" constant="102" id="gae-fC-v8o"/>
+                            <constraint firstItem="2DV-S9-8pZ" firstAttribute="leading" secondItem="u57-qT-B82" secondAttribute="leading" constant="162" id="i0T-Q6-q2z"/>
+                            <constraint firstItem="u57-qT-B82" firstAttribute="trailing" secondItem="2DV-S9-8pZ" secondAttribute="trailing" constant="156" id="iVM-zh-S2X"/>
+                            <constraint firstItem="u57-qT-B82" firstAttribute="trailing" secondItem="gNY-fl-1n1" secondAttribute="trailing" constant="103" id="pfp-iP-pdC"/>
+                            <constraint firstItem="Dq1-Na-4mc" firstAttribute="top" secondItem="yhP-J4-XBq" secondAttribute="top" id="sM5-sT-9ZN"/>
                             <constraint firstItem="Dq1-Na-4mc" firstAttribute="leading" secondItem="yhP-J4-XBq" secondAttribute="trailing" constant="25" id="vxv-vk-HBd"/>
-                            <constraint firstItem="2DV-S9-8pZ" firstAttribute="top" secondItem="gNY-fl-1n1" secondAttribute="bottom" constant="247" id="xyr-Wb-hnI"/>
+                            <constraint firstItem="2DV-S9-8pZ" firstAttribute="top" secondItem="gNY-fl-1n1" secondAttribute="bottom" constant="250" id="ycz-G2-hxS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="u57-qT-B82"/>
                     </view>
@@ -194,7 +196,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZA-tp-omr" userLabel="Confirm">
                                         <rect key="frame" x="140" y="537" width="95" height="30"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Add smoothie"/>
+                                        <state key="normal" title="Add smoothie">
+                                            <color key="titleColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="confirmPressed:" destination="Pzx-gj-Mtj" eventType="touchUpInside" id="V0C-jx-w3E"/>
                                         </connections>
@@ -228,7 +232,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-N0-85n">
                                         <rect key="frame" x="172" y="363" width="30" height="30"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Add"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="addPressed:" destination="Pzx-gj-Mtj" eventType="touchUpInside" id="EFW-oC-Y8Y"/>
                                         </connections>
@@ -307,6 +313,9 @@
             <point key="canvasLocation" x="2640.8000000000002" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PhotoOfStefanoIaconetti" width="2048" height="1536"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gDM-PH-wgW"/>
     </inferredMetricsTieBreakers>
