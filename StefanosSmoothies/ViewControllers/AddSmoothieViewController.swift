@@ -21,6 +21,7 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet var addButton: UIButton!
     @IBOutlet var confirm: UIButton!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var imageView: UIImageView!
     
     var isEdit: Bool = false
     
@@ -43,6 +44,23 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     //This array will be what the tableview consists of
     var ingredientArray: [String] = []
     
+    
+    @IBAction func imageTapped(_ sender: Any) {
+        
+        let imagePicker = UIImagePickerController()
+        //If the device has a camera, take a picture; otherwise, just pick from photo library
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.sourceType = .camera
+        }else{
+            imagePicker.sourceType = .photoLibrary
+        }
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        
+        //Place image picker on the screen
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     //When the add button is pressed an ingredient is inserted then data is reloaded
     @IBAction func addPressed(_ sender: Any) {
         
@@ -55,6 +73,7 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
          if isEdit{
             smoothie?.name = nameText.text
             smoothie?.ingredients = ingredientArray as NSArray
+            smoothie?.image = imageView.image
             
             saveSmoothie()
             navigationController?.popViewController(animated: true)
@@ -62,6 +81,7 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let smoothie = Smoothies(context: managedObjectContext!)
             smoothie.name = nameText.text
             smoothie.ingredients = ingredientArray as NSArray
+            smoothie.image = imageView.image
             saveSmoothie()
             navigationController?.popViewController(animated: true)
         }
@@ -73,7 +93,7 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
             nameText.text = smoothie.name
             
             ingredientArray.append(contentsOf: smoothie.ingredients as! [String])
-            
+            imageView.image = smoothie.image as? UIImage
             tableView.reloadData()
         }
         
@@ -86,6 +106,8 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        
         
         
         tableView.dataSource = self
@@ -166,4 +188,21 @@ class AddSmoothieViewController: UIViewController, UIPickerViewDelegate, UIPicke
             }
         }
     }
+}
+
+extension AddSmoothieViewController:  UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
+    //function to place the image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]){
+        
+        //Get picked image from info dictionary
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+    
+        //Put that image on the screen in the image view
+        imageView.image = image
+        
+        //Take image picker off the screen you must call this dismiss method
+        dismiss(animated: true, completion: nil)
+    }
+
 }

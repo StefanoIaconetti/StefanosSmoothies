@@ -189,7 +189,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isv-BJ-aRa">
-                                        <rect key="frame" x="27" y="59" width="320" height="216"/>
+                                        <rect key="frame" x="27" y="136" width="320" height="216"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZA-tp-omr" userLabel="Confirm">
                                         <rect key="frame" x="140" y="537" width="95" height="30"/>
@@ -200,7 +200,7 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RHJ-PQ-PRQ">
-                                        <rect key="frame" x="68" y="349" width="241" height="170"/>
+                                        <rect key="frame" x="68" y="426" width="241" height="93"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="sectionIndexBackgroundColor" red="0.69803921570000005" green="1" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -226,61 +226,85 @@
                                         </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-N0-85n">
-                                        <rect key="frame" x="172" y="286" width="30" height="30"/>
+                                        <rect key="frame" x="172" y="363" width="30" height="30"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
                                             <action selector="addPressed:" destination="Pzx-gj-Mtj" eventType="touchUpInside" id="EFW-oC-Y8Y"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qF4-Pa-3Ws">
+                                        <rect key="frame" x="27" y="8" width="96" height="96"/>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.38431372549999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="7cP-Be-WiB"/>
+                                            <constraint firstAttribute="width" constant="96" id="boZ-E4-mRx"/>
+                                        </constraints>
+                                    </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the name of smoothie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7L-BB-8hr">
-                                        <rect key="frame" x="27" y="21" width="320" height="30"/>
+                                        <rect key="frame" x="168" y="41" width="200" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.70588235294117652" green="0.99215686274509807" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="isv-BJ-aRa" firstAttribute="leading" secondItem="iD5-z6-UMr" secondAttribute="leading" constant="27" id="6Wh-H4-DnT"/>
                                     <constraint firstAttribute="trailing" secondItem="RHJ-PQ-PRQ" secondAttribute="trailing" constant="66" id="8rI-Md-osM"/>
-                                    <constraint firstItem="M7L-BB-8hr" firstAttribute="leading" secondItem="iD5-z6-UMr" secondAttribute="leading" constant="27" id="9MG-uF-zMD"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="AZA-tp-omr" secondAttribute="trailing" constant="140" id="Czf-CP-iJT"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="TR1-N0-85n" secondAttribute="trailing" constant="173" id="DA6-2l-cnM"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="M7L-BB-8hr" secondAttribute="trailing" constant="28" id="DaV-jt-Z9n"/>
+                                    <constraint firstItem="qF4-Pa-3Ws" firstAttribute="leading" secondItem="iD5-z6-UMr" secondAttribute="leading" constant="27" id="IBC-En-Hgv"/>
                                     <constraint firstItem="AZA-tp-omr" firstAttribute="top" secondItem="RHJ-PQ-PRQ" secondAttribute="bottom" constant="18" id="ILY-Qb-XK1"/>
                                     <constraint firstAttribute="trailing" secondItem="isv-BJ-aRa" secondAttribute="trailing" constant="28" id="JWe-Qn-RD1"/>
                                     <constraint firstItem="TR1-N0-85n" firstAttribute="leading" secondItem="iD5-z6-UMr" secondAttribute="leading" constant="172" id="KW4-Jy-Te9"/>
-                                    <constraint firstItem="isv-BJ-aRa" firstAttribute="top" secondItem="M7L-BB-8hr" secondAttribute="bottom" constant="8" id="ZcH-Gp-Gvl"/>
+                                    <constraint firstItem="qF4-Pa-3Ws" firstAttribute="top" secondItem="iD5-z6-UMr" secondAttribute="top" constant="8" id="Mpx-hs-h6M"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="M7L-BB-8hr" secondAttribute="trailing" constant="8" id="QVQ-fo-Uxy"/>
+                                    <constraint firstItem="qF4-Pa-3Ws" firstAttribute="centerY" secondItem="M7L-BB-8hr" secondAttribute="centerY" id="RxX-1w-QlH"/>
+                                    <constraint firstItem="TR1-N0-85n" firstAttribute="top" secondItem="isv-BJ-aRa" secondAttribute="bottom" constant="11" id="TMK-BP-WDe"/>
                                     <constraint firstItem="AZA-tp-omr" firstAttribute="leading" secondItem="iD5-z6-UMr" secondAttribute="leading" constant="140" id="c3H-jf-7s0"/>
                                     <constraint firstAttribute="bottom" secondItem="AZA-tp-omr" secondAttribute="bottom" constant="36" id="dLN-8y-WOH"/>
-                                    <constraint firstItem="M7L-BB-8hr" firstAttribute="top" secondItem="iD5-z6-UMr" secondAttribute="top" constant="21" id="e1O-lb-VI0"/>
-                                    <constraint firstItem="TR1-N0-85n" firstAttribute="top" secondItem="isv-BJ-aRa" secondAttribute="bottom" constant="11" id="mSN-k6-Uyy"/>
+                                    <constraint firstAttribute="trailing" secondItem="M7L-BB-8hr" secondAttribute="trailing" constant="7" id="fEF-GY-Uce"/>
+                                    <constraint firstItem="isv-BJ-aRa" firstAttribute="top" secondItem="qF4-Pa-3Ws" secondAttribute="bottom" constant="32" id="jbO-kD-1eg"/>
                                     <constraint firstItem="RHJ-PQ-PRQ" firstAttribute="top" secondItem="TR1-N0-85n" secondAttribute="bottom" constant="33" id="mgC-Zd-VMV"/>
                                     <constraint firstItem="RHJ-PQ-PRQ" firstAttribute="leading" secondItem="iD5-z6-UMr" secondAttribute="leading" constant="68" id="ndT-Op-mWV"/>
+                                    <constraint firstItem="M7L-BB-8hr" firstAttribute="leading" secondItem="qF4-Pa-3Ws" secondAttribute="trailing" constant="45" id="wSS-B0-K7C"/>
+                                    <constraint firstItem="M7L-BB-8hr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iD5-z6-UMr" secondAttribute="leading" constant="168" id="wgQ-aS-R53"/>
+                                    <constraint firstItem="isv-BJ-aRa" firstAttribute="top" secondItem="M7L-BB-8hr" secondAttribute="bottom" constant="65" id="za6-XM-QcR"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fKS-lr-hc2" appends="YES" id="VI4-8v-wTf"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iD5-z6-UMr" firstAttribute="leading" secondItem="k2J-9Y-rtE" secondAttribute="leading" id="2hr-d3-ZoM"/>
+                            <constraint firstItem="iD5-z6-UMr" firstAttribute="top" secondItem="k2J-9Y-rtE" secondAttribute="top" id="57k-QP-JEl"/>
+                            <constraint firstItem="iD5-z6-UMr" firstAttribute="bottom" secondItem="k2J-9Y-rtE" secondAttribute="bottom" id="alr-Xn-eMd"/>
                             <constraint firstItem="k2J-9Y-rtE" firstAttribute="trailing" secondItem="iD5-z6-UMr" secondAttribute="trailing" id="chF-ci-MRU"/>
-                            <constraint firstItem="iD5-z6-UMr" firstAttribute="top" secondItem="k2J-9Y-rtE" secondAttribute="top" id="hmc-JP-KHx"/>
-                            <constraint firstItem="k2J-9Y-rtE" firstAttribute="bottom" secondItem="iD5-z6-UMr" secondAttribute="bottom" id="uBQ-4t-UO3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k2J-9Y-rtE"/>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="TR1-N0-85n" id="ieq-13-o4g"/>
                         <outlet property="confirm" destination="AZA-tp-omr" id="NuQ-BT-H7z"/>
+                        <outlet property="imageView" destination="qF4-Pa-3Ws" id="QNt-bE-W7j"/>
                         <outlet property="ingredientList" destination="isv-BJ-aRa" id="1wz-6I-SuR"/>
                         <outlet property="nameText" destination="M7L-BB-8hr" id="HHe-GB-LhN"/>
                         <outlet property="tableView" destination="RHJ-PQ-PRQ" id="We5-r4-pTh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppp-at-ZVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fKS-lr-hc2">
+                    <connections>
+                        <action selector="imageTapped:" destination="Pzx-gj-Mtj" id="ofP-2D-qwp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2642" y="137"/>
+            <point key="canvasLocation" x="2640.8000000000002" y="136.28185907046478"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
