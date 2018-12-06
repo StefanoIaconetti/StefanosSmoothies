@@ -2,20 +2,30 @@
 //  AboutMeViewController.swift
 //  StefanosSmoothies
 //
-//  Created by Jaimilyn Vanderheyde on 2018-11-24.
+//  Created by Stefano Iaconetti on 2018-11-24.
 //  Copyright © 2018 Stefano Iaconetti. All rights reserved.
 //
 
+//Imports
 import Foundation
 import UIKit
 import CoreData
 import UserNotifications
 
+//This viewcontroller gives the user access to my portfolio website, ability to use notifications and has a picture of me
 class AboutMeViewController: UIViewController{
+    //Outlets connected via storyboard
     @IBOutlet weak var switchCheck: UISwitch!
     
     @IBOutlet var linkToWebsite: UIButton!
     
+    @IBAction func goBack(_ sender: Any){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    var hideAnimator: CustomModalHideAnimator?
     @IBAction func sendNotifications(_ sender: Any) {
         if(switchCheck.isOn == true){
             // Configure the recurring date.
@@ -45,7 +55,7 @@ class AboutMeViewController: UIViewController{
             let notificationCenter = UNUserNotificationCenter.current()
             notificationCenter.add(request) { (error) in
                 if error != nil {
-                    print("error adding the notification - \(error?.localizedDescription)")
+                    print("error adding the notification - \(String(describing: error?.localizedDescription)) ")
                 }
             }
         }
@@ -61,6 +71,10 @@ class AboutMeViewController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        
+        
+        //Creates instance of CustomModalHideAnimator and binds the viewController
+        hideAnimator = CustomModalHideAnimator(withViewController: self)
     }
     
 }

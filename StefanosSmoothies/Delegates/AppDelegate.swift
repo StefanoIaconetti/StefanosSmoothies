@@ -43,7 +43,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Saves the context
             persistentContainer.saveContextIfNeeded()
         }
-
-
 }
 
